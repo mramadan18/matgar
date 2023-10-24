@@ -1,6 +1,4 @@
 "use client";
-import "./packages.css";
-import { MdVerified } from "react-icons/md";
 import Layout from "../Layout";
 import PachageList from "@/components/matjarInfo/Packages/PachageList";
 
@@ -22,8 +20,8 @@ const page = () => {
 
         <PachageList />
 
-        <div className="next">
-          <button className="rounded-xl text-2xl w-28 h-14 ">التالي</button>
+        <div className="mt-20 flex justify-end items-center">
+          <button className="rounded-xl text-2xl w-28 h-14">التالي</button>
         </div>
       </div>
     </Layout>

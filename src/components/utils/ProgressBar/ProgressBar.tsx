@@ -5,7 +5,7 @@ const ProgressBar = () => {
   return (
     <div className="h-28 shadow-lg flex justify-around items-center">
       <div className="flex items-center gap-x-3">
-        <BsFillCheckCircleFill className="text-[36px]" />
+        <BsFillCheckCircleFill className="text-[36px] text-primary" />
         <span className="text-4xl">انشاء حساب</span>
       </div>
       <div className="h-[1px] w-32 bg-black"></div>

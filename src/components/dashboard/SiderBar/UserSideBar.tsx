@@ -25,6 +25,8 @@ import googleImg from "../../../../public/img for salla/dashboard/en_badge_web_g
 import appleImg from "../../../../public/img for salla/dashboard/download-application-button-apple-app-store-free-vector-removebg-preview.png";
 
 import LinkNav from "./LinkNav";
+import { useEffect, useState } from "react";
+import { usePathname } from "next/navigation";
 
 const UserSideBar = () => {
   return (
@@ -97,8 +99,16 @@ const UserSideBar = () => {
           <h4 className="text-[#0279DE] text-xl font-bold mt-8 pr-6">
             الاعدادات
           </h4>
-          <LinkNav url={"#"} img={bouquetStoreImg} name="باقة المتجر" />
-          <LinkNav url={"#"} img={settingsStoreImg} name="إعدادات المتجر" />
+          <LinkNav
+            url={"/package-matgar"}
+            img={bouquetStoreImg}
+            name="باقة المتجر"
+          />
+          <LinkNav
+            url={"/dashboard/matgar-settings"}
+            img={settingsStoreImg}
+            name={"إعدادات المتجر"}
+          />
           <LinkNav url={"#"} img={walletImg} name="المحفظة والفواتير" />
 
           <h4 className="text-[#0279DE] text-xl font-bold mt-8 pr-6">
