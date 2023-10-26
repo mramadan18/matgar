@@ -6,7 +6,6 @@ const LoginLink = () => {
   return (
     <li className="menu-item-login menu-item menu-item-type-custom menu-item-object-custom menu-item-509">
       <Link
-        rel="noopener"
         href="/login"
         style={pathname === "/special" ? { color: "#fff" } : { color: "#000" }}
       >

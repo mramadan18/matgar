@@ -10,9 +10,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ar" dir="rtl">
-      <body className={inter.className + " h-[100vh] overflow-hidden"}>
+      <body className={inter.className + " h-[100vh] overflow-y-auto"}>
         <div className="flex flex-wrap justify-between items-center gap-4">
-          <div className="fixed top-0 right-0 h-full w-[260px]  lg:w-[360px]">
+          <div className="fixed top-0 right-0 h-full w-[260px] lg:w-[360px]">
             <UserSideBar />
           </div>
 

@@ -4,8 +4,11 @@ import BreadcrumbItemActive from "@/components/dashboard/Breadcrumb/BreadcrumbIt
 import BreadcrumbItemMain from "@/components/dashboard/Breadcrumb/BreadcrumbItemMain";
 import BreadcrumbList from "@/components/dashboard/Breadcrumb/BreadcrumbList";
 import HelpButton from "@/components/dashboard/HelpButton/HelpButton";
+import SettingsItem from "@/components/dashboard/matgar-settings/SettingsItem";
 import settingsImg from "#/img for salla/dashboard/setting-2.png";
-import SettingsItem from "@/components/dashboard/matgar-settings/settingsItem";
+import brokenImg from "#/img for salla/dashboard/vuesax-broken-icon.png";
+import currenciesImg from "#/img for salla/dashboard/vuesax-broken-percentage-circle.png";
+import optionsImg from "#/img for salla/dashboard/vuesax-broken-category.png";
 
 const page = () => {
   return (
@@ -34,10 +37,10 @@ const page = () => {
             desc={"الرابط,الشعار,الاسم,المقر"}
           />
           <SettingsItem
-            href={"/dashboard/matgar-settings/main-settings"}
-            img={settingsImg}
-            title={"إعدادات المتجر"}
-            desc={"الرابط,الشعار,الاسم,المقر"}
+            href={"/dashboard/matgar-settings/shipping-delivery"}
+            img={brokenImg}
+            title={"خيارات الشحن والتوصيل"}
+            desc={"الربط مع شركات الشحن"}
           />
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
@@ -52,22 +55,23 @@ const page = () => {
             desc={"الرابط,الشعار,الاسم,المقر"}
           />
           <SettingsItem
+            href={"/dashboard/matgar-settings/currencies"}
+            img={currenciesImg}
+            title={"العملات"}
+            desc={"العملات المتاحة في المتجر"}
+            isPro
+          />
+          <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
-            img={settingsImg}
-            title={"إعدادات المتجر"}
-            desc={"الرابط,الشعار,الاسم,المقر"}
+            img={optionsImg}
+            title={"خيارات المتجر"}
+            desc={"خيارات التحكم بالمتجر"}
           />
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
             img={settingsImg}
-            title={"إعدادات المتجر"}
-            desc={"الرابط,الشعار,الاسم,المقر"}
-          />
-          <SettingsItem
-            href={"/dashboard/matgar-settings/main-settings"}
-            img={settingsImg}
-            title={"إعدادات المتجر"}
-            desc={"الرابط,الشعار,الاسم,المقر"}
+            title={"اللغات"}
+            desc={"تفعيل تعدد اللغات في المتجر"}
           />
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}

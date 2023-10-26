@@ -4,8 +4,8 @@ import Link from "next/link";
 
 const page = () => {
   return (
-    <div className="content-container flex justify-between h-[90vh] text-right">
-      <div className="flex flex-col  w-[40%]">
+    <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[90vh] text-right overflow-hidden">
+      <div className="flex flex-col w-full md:w-[40%] mt-10 md:mt-0">
         <div
           className="tabs__head anime-item flex flex-row-reverse"
           style={{ transform: "translateY(0px)", opacity: 1 }}
@@ -99,7 +99,7 @@ const page = () => {
           </form>
         </div>
       </div>
-      <div className=" title title--hero flex flex-col w-[55%]">
+      <div className=" title title--hero flex flex-col w-full md:w-[55%]">
         <Image src={welcomeImg} alt={"welcome-img"} />
         <div className=" w-full text-center">
           <p

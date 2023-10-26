@@ -12,8 +12,8 @@ const page = () => {
   };
 
   return (
-    <div className="content-container flex justify-between h-[100vh] text-right">
-      <div className="flex flex-col w-[40%]">
+    <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[100vh] text-rightmd:mt-0 overflow-hidden">
+      <div className="flex flex-col w-full md:w-[40%] mt-14 md:mt-0">
         <div
           className="tabs__head anime-item flex flex-row-reverse"
           style={{ transform: "translateY(0px)", opacity: 1 }}
@@ -137,8 +137,8 @@ const page = () => {
           </form>
         </div>
       </div>
-      <div className=" title title--hero flex flex-col w-[50%] gap-3">
-        <Image src={welcomeImg} alt={"welcome-img"} className="" />
+      <div className="title title--hero flex flex-col w-full md:w-[50%] gap-3">
+        <Image src={welcomeImg} alt={"welcome-img"} />
         <div className=" w-full text-center">
           <h2
             className="anime-item opacity-0 w-full"
