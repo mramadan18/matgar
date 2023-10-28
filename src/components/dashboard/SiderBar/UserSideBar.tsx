@@ -23,10 +23,7 @@ import makeImg from "../../../../public/img for salla/dashboard/vuesax-broken-li
 import installImg from "../../../../public/img for salla/dashboard/vuesax-broken-autonio-(niox).png";
 import googleImg from "../../../../public/img for salla/dashboard/en_badge_web_generic-removebg-preview.png";
 import appleImg from "../../../../public/img for salla/dashboard/download-application-button-apple-app-store-free-vector-removebg-preview.png";
-
 import LinkNav from "./LinkNav";
-import { useEffect, useState } from "react";
-import { usePathname } from "next/navigation";
 
 const UserSideBar = () => {
   return (
@@ -90,9 +87,21 @@ const UserSideBar = () => {
             img={promocodeImg}
             name="كوبونات التخفيض"
           />
-          <LinkNav url={"#"} img={coinsImg} name="التسويق بالعمولة" />
-          <LinkNav url={"#"} img={offersImg} name="العروض الخاصة" />
-          <LinkNav url={"#"} img={martingImg} name="الحملات التسويقية" />
+          <LinkNav
+            url={"/dashboard/affiliate-marketing"}
+            img={coinsImg}
+            name="التسويق بالعمولة"
+          />
+          <LinkNav
+            url={"/dashboard/special-offers"}
+            img={offersImg}
+            name="العروض الخاصة"
+          />
+          <LinkNav
+            url={"/dashboard/marketing-campaigns"}
+            img={martingImg}
+            name="الحملات التسويقية"
+          />
           <LinkNav url={"#"} img={stockImg} name="السلات المتروكة" />
           <LinkNav url={"#"} img={personImg} name="نظام الولاء" />
 

@@ -17,7 +17,7 @@ import IncludedCoupon from "@/components/dashboard/Coupons/IncludedCoupon";
 import ExcludedCoupon from "@/components/dashboard/Coupons/ExcludedCoupon";
 
 const page = () => {
-  const [modalOpen, setModalOpen] = useState(true);
+  const [modalOpen, setModalOpen] = useState(false);
   const [first, setFirst] = useState(true);
   const [second, setSecond] = useState(false);
   const [third, setThird] = useState(false);

@@ -5,7 +5,7 @@ import plusImg from "#/img for salla/dashboard/plus-blue.png";
 
 interface PropsValue {
   title: string;
-  handleClick: () => void;
+  handleClick?: () => void;
 }
 
 const AddButton = ({ title, handleClick }: PropsValue) => {
