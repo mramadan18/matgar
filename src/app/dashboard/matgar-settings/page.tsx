@@ -43,10 +43,10 @@ const page = () => {
             desc={"الربط مع شركات الشحن"}
           />
           <SettingsItem
-            href={"/dashboard/matgar-settings/main-settings"}
+            href={"/dashboard/matgar-settings/payment-methods"}
             img={settingsImg}
-            title={"إعدادات المتجر"}
-            desc={"الرابط,الشعار,الاسم,المقر"}
+            title={"طرق الدفع"}
+            desc={"تفعيل المدفوعات الالكترونية"}
           />
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
