@@ -102,8 +102,16 @@ const UserSideBar = () => {
             img={martingImg}
             name="الحملات التسويقية"
           />
-          <LinkNav url={"#"} img={stockImg} name="السلات المتروكة" />
-          <LinkNav url={"#"} img={personImg} name="نظام الولاء" />
+          <LinkNav
+            url={"/dashboard/abandoned-baskets"}
+            img={stockImg}
+            name="السلات المتروكة"
+          />
+          <LinkNav
+            url={"/dashboard/loyalty-system"}
+            img={personImg}
+            name="نظام الولاء"
+          />
 
           <h4 className="text-[#0279DE] text-xl font-bold mt-8 pr-6">
             الاعدادات

@@ -10,6 +10,11 @@ const page = () => {
         <BreadcrumbItemMain />
         <BreadcrumbItemActive name="باقة المتجر" url="/package-matgar" />
       </BreadcrumbList>
+
+      <div className="flex justify-center items-center gap-4">
+        <div className="flex flex-col gap-4"></div>
+        <div className="flex flex-col gap-4"></div>
+      </div>
     </div>
   );
 };
