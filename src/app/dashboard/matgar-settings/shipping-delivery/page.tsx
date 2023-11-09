@@ -23,12 +23,12 @@ const page = () => {
           <BreadcrumbItemMain />
           <BreadcrumbItemActive
             name={"إعدادات المتجر"}
-            url={"/dashboard/magtar-settings"}
+            url={"/dashboard/matgar-settings"}
           />
           /
           <BreadcrumbItemActive
             name={"خيارات الشحن والتوصيل"}
-            url={"/dashboard/magtar-settings/shipping-delivery"}
+            url={"/dashboard/matgar-settings/shipping-delivery"}
           />
         </BreadcrumbList>
         <HelpButton />

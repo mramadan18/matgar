@@ -14,16 +14,16 @@ const AddProduct = () => {
   const [imgSelected, setImgSelected] = useState(photo);
 
   return (
-    <div className="mt-10">
-      <div className="flex flex-col items-start rounded-xl overflow-hidden shadow-lg w-[515px]">
+    <div className="mt-10 w-full">
+      <div className="flex flex-col items-start rounded-xl overflow-hidden shadow-lg w-full md:w-[515px]">
         <label
           htmlFor="uploadFile"
-          className="img overflow-hidden rounded-xl relative bg-[#D6D6D6] w-[515px] h-[390px] flex justify-center items-center"
+          className="img overflow-hidden rounded-xl relative bg-[#D6D6D6] w-full md:w-[515px] h-[390px] flex justify-center items-center"
         >
           <Image src={imgSelected} alt="photo" priority />
           <label
             htmlFor="uploadFile"
-            className="absolute bottom-2 left-2 w-[200px] h-[30px] bg-white rounded-full flex justify-center items-center gap-4"
+            className="absolute bottom-2 left-2 md:w-[200px] h-[30px] bg-white rounded-full flex justify-center items-center gap-4"
           >
             <Image src={img} alt="img" priority />
             <span className="text-black">إضافة صورة او فيديو</span>
@@ -49,7 +49,7 @@ const AddProduct = () => {
             <input
               type="text"
               placeholder="منتج جاهز - أدخل اسم المنتج"
-              className="border border-gray-500 w-full px-10"
+              className="border border-gray-500 w-full px-14 lg:px-10"
             />
           </div>
           <div className="relative">
@@ -64,7 +64,7 @@ const AddProduct = () => {
             <input
               type="text"
               placeholder="السعر"
-              className="border border-gray-500 w-full px-10"
+              className="border border-gray-500 w-full px-14 lg:px-10"
             />
             <span className="w-10 h-full border border-black absolute top-0 left-0 flex justify-center items-center">
               <Image src={dollarImg} alt="dollar" />
@@ -82,7 +82,7 @@ const AddProduct = () => {
             <input
               type="text"
               placeholder="كمية غير محدودة"
-              className="border border-gray-500 w-full px-10"
+              className="border border-gray-500 w-full px-14 lg:px-10"
             />
           </div>
           <div className="relative">
@@ -94,7 +94,7 @@ const AddProduct = () => {
               width={18}
               height={18}
             />
-            <select className="border border-gray-500 w-full py-[6px] px-10 relative">
+            <select className="border border-gray-500 w-full py-[6px] px-14 lg:px-10 relative">
               <option defaultChecked>اختر تصنيف المنتج</option>
             </select>
             <Image
@@ -119,7 +119,7 @@ const AddProduct = () => {
               height={18}
               priority
             />
-            <select className="border border-gray-500 w-full py-[6px] px-10 relative text-center">
+            <select className="border border-gray-500 w-full py-[6px] px-14 lg:px-10 relative text-center">
               <option defaultChecked>المزيد</option>
             </select>
           </div>

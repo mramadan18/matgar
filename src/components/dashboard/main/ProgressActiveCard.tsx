@@ -12,10 +12,10 @@ interface propsValue {
 const ProgressActiveCard = (props: propsValue) => {
   return (
     <div className="w-full flex border-[1px] rounded mb-4">
-      <div className=" relative flex justify-start items-center w-[5rem] h-[5rem] ml-5">
+      <div className="relative flex justify-start items-center w-[5rem] h-[5rem] ml-5">
         <Image src={props.img} alt={""} />
         {props.isActive && (
-          <div className=" absolute">
+          <div className="absolute top-0 right-0 w-6">
             <Image src={done} alt={""} />
           </div>
         )}

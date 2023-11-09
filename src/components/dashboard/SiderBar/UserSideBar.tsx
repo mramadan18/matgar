@@ -27,7 +27,7 @@ import LinkNav from "./LinkNav";
 
 const UserSideBar = () => {
   return (
-    <div className="sidebar-content pt-6 overflow-x-hidden   width={160}">
+    <div className="sidebar-content pt-6 overflow-x-hidden">
       <div className="mb-6">
         <Image src={LogoImage} alt={"logo-matger"} width={150} />
       </div>

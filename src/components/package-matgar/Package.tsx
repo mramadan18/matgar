@@ -16,9 +16,9 @@ interface PropsValue {
 
 const Package = ({ isPro, img, type, desc, price, f1, f2, f3 }: PropsValue) => {
   return (
-    <div className="flex flex-col gap-4 pt-8 w-[400px] min-h-[600px] shadow-xl bg-white border border-[#707070] relative overflow-hidden">
+    <div className="flex flex-col gap-4 pt-8 w-full lg:h-[600px] shadow-xl bg-white border border-[#707070] relative overflow-hidden">
       {isPro && (
-        <div className="absolute top-[2.2rem] left-[-43px] -rotate-45 p-1 bg-[#FF0000] text-white w-44 text-center">
+        <div className="absolute top-[2.0rem] left-[-23px] lg:top-[2.2rem] lg:left-[-43px] -rotate-45 p-1 bg-[#FF0000] text-white w-44 text-center">
           اختيار التجار
         </div>
       )}

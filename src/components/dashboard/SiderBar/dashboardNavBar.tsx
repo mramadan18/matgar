@@ -1,47 +1,50 @@
 import Image from "next/image";
-import React from "react";
+import React, { useState } from "react";
 import giftImg from "public/img for salla/dashboard/icons8-gift-50.png";
 import DartImage from "public/img for salla/dashboard/icons8-moon-50.png";
 import defualtUser from "public/img for salla/dashboard/vuesax-bulk-profile-circle.png";
+import searchImg from "#/img for salla/dashboard/vuesax-broken-search-normal.png";
+import { AiOutlineMenu } from "react-icons/ai";
 
-const DashboardNavBar = ({ children }: { children: React.ReactNode }) => {
+const DashboardNavBar = ({
+  children,
+  setShowSidebar,
+}: {
+  children: React.ReactNode;
+  setShowSidebar: (value: boolean) => void;
+}) => {
   return (
     <div className="navbar-container pt-6">
-      <div className="flex justify-between mb-10">
-        <div className="flex">
+      <div className="flex justify-between gap-4 mb-10">
+        <AiOutlineMenu
+          className="text-[24px] block lg:hidden"
+          onClick={() => setShowSidebar(true)}
+        />
+        <div className="hidden lg:flex relative w-1/2">
           <input
-            className=" max-w-[23rem]"
             type="text"
             placeholder="ابحث برقم الطلب اسم العميل رقم الشحنة"
           />
 
-          <select className="border rounded-md justify-center items-center opacity-50 px-3 text-[1rem]">
+          <select className="absolute top-1/2 left-0 -translate-y-1/2 border border-r h-full pr-1 opacity-50">
             <option value="orders">الطلبات</option>
             <option value="products">المنتجات</option>
             <option value="cutomers">العملاء</option>
           </select>
         </div>
 
-        <div className="flex flex-row-reverse space-x-5 items-center">
+        <div className="flex items-center gap-4">
           <Image
-            src={giftImg}
-            alt={"gift-Image"}
-            width={40}
-            style={{ marginLeft: "1rem" }}
+            src={searchImg}
+            alt={"search-Image"}
+            width={30}
+            className="ml-4 lg:hidden"
           />
-          <Image src={DartImage} alt={"moon-image"} width={40} />
-          <div className="flex justify-center items-center flex-row-reverse ">
-            <Image
-              src={defualtUser}
-              alt={"profile"}
-              width={40}
-              className="ml-2"
-            />
-
-            <h1>Demo</h1>
-            <select className="border rounded-md justify-center items-center opacity-50 px-3 text-[1rem] mr-2">
-              <option value="orders">الطلبات</option>
-            </select>
+          <Image src={giftImg} alt={"gift-Image"} width={30} />
+          <Image src={DartImage} alt={"moon-image"} width={30} />
+          <div className="flex justify-center items-center gap-4">
+            <Image src={defualtUser} alt={"profile"} width={30} />
+            <h3>user</h3>
           </div>
         </div>
       </div>

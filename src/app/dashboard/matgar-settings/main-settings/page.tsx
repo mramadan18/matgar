@@ -33,12 +33,12 @@ const page = () => {
           <BreadcrumbItemMain />
           <BreadcrumbItemActive
             name={"إعدادات المتجر"}
-            url={"/dashboard/magtar-settings"}
+            url={"/dashboard/matgar-settings"}
           />
           /
           <BreadcrumbItemActive
             name={"الإعدادات الأساسية"}
-            url={"/dashboard/magtar-settings/main-settings"}
+            url={"/dashboard/matgar-settings/main-settings"}
           />
         </BreadcrumbList>
         <HelpButton />
@@ -50,7 +50,7 @@ const page = () => {
         <div className="flex flex-col items-center gap-2 mt-8">
           <label
             htmlFor="uploadFile"
-            className="img overflow-hidden rounded-lg relative bg-[#eeeeee] w-[300px] h-[250px] flex justify-center items-center"
+            className="img overflow-hidden rounded-lg relative bg-[#eeeeee] w-full lg:w-[300px] h-[250px] flex justify-center items-center"
           >
             <Image src={imgSelected} alt="photo" priority />
 
@@ -64,7 +64,7 @@ const page = () => {
 
           <h3 className="font-normal">تحديث الصورة</h3>
           <span>الشعار يظهر الصغير في المتجر؟</span>
-          <div className="flex flex-col gap-4 w-1/2 mt-4">
+          <div className="flex flex-col gap-4 w-full lg:w-1/2 mt-4">
             <div className="relative">
               <Image
                 className="absolute top-1/2 right-4 -translate-y-1/2"
@@ -145,7 +145,7 @@ const page = () => {
             لتقديم افضل تجربة لكم على المنصة يرجى اختيار نشاط المتجر الاساسي
           </h3>
 
-          <div className="flex flex-col gap-4 w-1/2 mt-4">
+          <div className="flex flex-col gap-4 w-full lg:w-1/2 mt-4">
             <div className="relative">
               <Image
                 className="absolute top-1/2 right-4 -translate-y-1/2"
@@ -180,7 +180,7 @@ const page = () => {
             لتقديم افضل تجربة لكم على المنصة يرجى اختيار نشاط المتجر الاساسي
           </h3>
 
-          <div className="flex flex-col gap-4 w-1/2 mt-4">
+          <div className="flex flex-col gap-4 w-full lg:w-1/2 mt-4">
             <div className="relative">
               <svg
                 className="absolute top-1/2 right-4 -translate-y-1/2"
@@ -335,7 +335,7 @@ const page = () => {
         <h2 className="font-normal">شهادة توثيق منصة الأعمال</h2>
 
         <div className="flex flex-col items-center gap-2 mt-8">
-          <div className="flex flex-col gap-4 w-1/2 mt-4">
+          <div className="flex flex-col gap-4 w-full lg:w-1/2 mt-4">
             <label htmlFor="number" className="text-lg">
               رقم التوثيق
             </label>
@@ -390,7 +390,7 @@ const page = () => {
         <h2 className="font-normal">حسابات التواصل الاجتماعي</h2>
 
         <div className="flex flex-col items-center gap-2 mt-8">
-          <div className="flex flex-col gap-4 w-1/2 mt-4">
+          <div className="flex flex-col gap-4 w-full lg:w-1/2 mt-4">
             <div className="relative">
               <Image
                 className="absolute top-1/2 right-4 -translate-y-1/2"
@@ -471,7 +471,7 @@ const page = () => {
         <h2 className="font-normal">روابط اخرى</h2>
 
         <div className="flex flex-col items-center gap-2 mt-8">
-          <div className="flex flex-col gap-4 w-1/2 mt-4">
+          <div className="flex flex-col gap-4 w-full lg:w-1/2 mt-4">
             <div className="relative">
               <AiOutlineApple className="absolute top-1/2 right-4 -translate-y-1/2 text-lg" />
 

@@ -14,12 +14,12 @@ const page = () => {
           <BreadcrumbItemMain />
           <BreadcrumbItemActive
             name={"إعدادات المتجر"}
-            url={"/dashboard/magtar-settings"}
+            url={"/dashboard/matgar-settings"}
           />
           /
           <BreadcrumbItemActive
             name={"العملات"}
-            url={"/dashboard/magtar-settings/currencies"}
+            url={"/dashboard/matgar-settings/currencies"}
           />
         </BreadcrumbList>
         <HelpButton />

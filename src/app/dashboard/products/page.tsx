@@ -12,6 +12,8 @@ import infoImg from "../../../../public/img for salla/dashboard/icons8-info-popu
 import plusImg from "../../../../public/img for salla/dashboard/plus-blue.png";
 import NotFoundProducts from "@/components/dashboard/products/NotFoundProducts";
 import AddProduct from "@/components/dashboard/products/AddProduct";
+import HelpButton from "@/components/dashboard/HelpButton/HelpButton";
+import AddButton from "@/components/dashboard/AddButton/AddButton";
 
 const page = () => {
   const [showMenu, setShowMenu] = useState(false);
@@ -24,24 +26,15 @@ const page = () => {
           <BreadcrumbItemMain />
           <BreadcrumbItemActive name="المنتجات" url="/dashboard/products" />
         </BreadcrumbList>
-        <button className="bg-[#0279DE] rounded-full w-44 h-14 flex justify-between items-center px-6">
-          <Image src={infoImg} alt="down" priority width={24} height={24} />
-          <span className="text-xl text-black">مساعدة</span>
-          <Image src={arrowDown} alt="down" priority width={18} height={18} />
-        </button>
+        <HelpButton />
       </div>
 
       <div className="flex justify-between items-center mt-8">
         <div className="relative">
-          <button
-            className="w-[240px] h-16 bg-[#0279DE] rounded-full px-2 gap-6 text-2xl flex justify-start"
-            onClick={() => setShowMenu(!showMenu)}
-          >
-            <span className="w-10 h-10 text-red-400 bg-white rounded-full flex justify-center items-center">
-              <Image src={plusImg} alt="plus" priority />
-            </span>
-            <span>إضافة منتج جديد</span>
-          </button>
+          <AddButton
+            title="إضافة منتج جديد"
+            handleClick={() => setShowMenu(!showMenu)}
+          />
           {showMenu && <MenuAddNewProduct />}
         </div>
         <div className="flex justify-center items-center gap-6">

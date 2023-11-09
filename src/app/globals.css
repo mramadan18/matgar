@@ -14,7 +14,7 @@ html {
 
 @media (max-width: 579px) {
   html {
-    font-size: 12px;
+    font-size: 10px;
   }
 }
 
@@ -1166,7 +1166,7 @@ input {
 
 .swiper-button-prev,
 .swiper-button-next {
-  top: 1.5rem !important
+  top: 2.3rem !important
 }
 
 .swiper-button-prev::after,

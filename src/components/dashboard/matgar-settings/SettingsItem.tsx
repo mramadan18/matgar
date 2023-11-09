@@ -17,7 +17,7 @@ const SettingsItem = ({ img, title, desc, href, isPro }: PropsValue) => {
       className="flex flex-col justify-center items-center gap-1 p-10 border border-[#707070] relative overflow-hidden"
     >
       {isPro && (
-        <div className="absolute top-5 left-[-55px] -rotate-45 p-1 bg-[#FF0000] text-white w-44 text-center">
+        <div className="absolute top-8 left-[-30px] lg:top-5 lg:left-[-55px] -rotate-45 p-1 bg-[#FF0000] text-white w-44 text-center">
           بلس - برو
         </div>
       )}

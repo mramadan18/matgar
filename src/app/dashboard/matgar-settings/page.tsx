@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import BreadcrumbItemActive from "@/components/dashboard/Breadcrumb/BreadcrumbItemActive";
 import BreadcrumbItemMain from "@/components/dashboard/Breadcrumb/BreadcrumbItemMain";
 import BreadcrumbList from "@/components/dashboard/Breadcrumb/BreadcrumbList";
@@ -9,6 +8,7 @@ import settingsImg from "#/img for salla/dashboard/setting-2.png";
 import brokenImg from "#/img for salla/dashboard/vuesax-broken-icon.png";
 import currenciesImg from "#/img for salla/dashboard/vuesax-broken-percentage-circle.png";
 import optionsImg from "#/img for salla/dashboard/vuesax-broken-category.png";
+import walletImg from "#/img for salla/dashboard/icons8-coin-wallet-32.png";
 
 const page = () => {
   return (
@@ -18,7 +18,7 @@ const page = () => {
           <BreadcrumbItemMain />
           <BreadcrumbItemActive
             name={"إعدادات المتجر"}
-            url={"/dashboard/coupons"}
+            url={"/dashboard/matgar-settings"}
           />
         </BreadcrumbList>
         <HelpButton />
@@ -44,15 +44,15 @@ const page = () => {
           />
           <SettingsItem
             href={"/dashboard/matgar-settings/payment-methods"}
-            img={settingsImg}
+            img={walletImg}
             title={"طرق الدفع"}
             desc={"تفعيل المدفوعات الالكترونية"}
           />
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
-            img={settingsImg}
-            title={"إعدادات المتجر"}
-            desc={"الرابط,الشعار,الاسم,المقر"}
+            img={walletImg}
+            title={"المحفظة والفواتير"}
+            desc={"رصيد المحفظة,الفواتير, اشتراكاتي"}
           />
           <SettingsItem
             href={"/dashboard/matgar-settings/currencies"}
@@ -62,7 +62,7 @@ const page = () => {
             isPro
           />
           <SettingsItem
-            href={"/dashboard/matgar-settings/main-settings"}
+            href={"/dashboard/matgar-settings/matgar-options"}
             img={optionsImg}
             title={"خيارات المتجر"}
             desc={"خيارات التحكم بالمتجر"}
@@ -111,7 +111,7 @@ const page = () => {
           إعدادات المنتجات
         </h1>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
             img={settingsImg}
@@ -144,7 +144,7 @@ const page = () => {
           الإعدادات المتقدمة
         </h1>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
             img={settingsImg}
@@ -223,7 +223,7 @@ const page = () => {
       <div>
         <h1 className="text-2xl font-bold text-gray-800 mt-8 mb-6">الأرشيف</h1>
 
-        <div className="grid grid-cols-4 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <SettingsItem
             href={"/dashboard/matgar-settings/main-settings"}
             img={settingsImg}

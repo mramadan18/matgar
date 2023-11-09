@@ -26,7 +26,7 @@ const page = () => {
           /
           <BreadcrumbItemActive
             name={"عمليات الدفع الاكتروني"}
-            url={"/dashboard/magtar-settings/payment-methods"}
+            url={"/dashboard/matgar-settings/payment-methods"}
           />
         </BreadcrumbList>
         <HelpButton />

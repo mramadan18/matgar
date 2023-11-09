@@ -23,6 +23,8 @@ import "swiper/css/free-mode";
 // import required modules
 import { FreeMode } from "swiper/modules";
 import Link from "next/link";
+import HelpButton from "@/components/dashboard/HelpButton/HelpButton";
+import AddButton from "@/components/dashboard/AddButton/AddButton";
 
 const page = () => {
   return (
@@ -32,21 +34,12 @@ const page = () => {
           <BreadcrumbItemMain />
           <BreadcrumbItemActive name="الطلبات" url="/dashboard/orders" />
         </BreadcrumbList>
-        <button className="bg-[#0279DE] rounded-full w-44 h-14 flex justify-between items-center px-6">
-          <Image src={infoImg} alt="down" priority width={24} height={24} />
-          <span className="text-xl text-black">مساعدة</span>
-          <Image src={arrowDown} alt="down" priority width={18} height={18} />
-        </button>
+        <HelpButton />
       </div>
 
       <div className="flex justify-between items-center mt-8">
         <Link className="relative" href={"/dashboard/orders/create-order"}>
-          <button className="w-[180px] h-16 bg-[#0279DE] rounded-full px-2 gap-6 text-2xl flex justify-start">
-            <span className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-              <Image src={plusImg} alt="plus" priority />
-            </span>
-            <span>طلب جديد</span>
-          </button>
+          <AddButton title={"طلب جدبد"} />
         </Link>
         <div className="flex justify-center items-center gap-6">
           <div className="flex justify-center items-center gap-2">

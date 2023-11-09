@@ -13,7 +13,7 @@ const BreadcrumbItemActive = ({ name, url }: PropsValue) => {
         className="flex items-center text-[rgba(0,0,0,0.5)] font-medium"
         href={url}
       >
-        <span className="mx-2 text-lg">{name}</span>
+        <span className="mx-1 text-lg">{name}</span>
       </Link>
     </li>
   );

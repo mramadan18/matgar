@@ -66,7 +66,7 @@ const page = () => {
           </div>
         </div>
 
-        <div className="p-4 bg-[#F2F2F2] rounded-lg flex justify-start items-center gap-4 mt-6">
+        <div className="p-4 bg-[#F2F2F2] rounded-lg grid grid-cols-2 lg:grid-cols-4 items-center gap-4 mt-6">
           <div className="flex flex-col p-4 bg-white px-4 gap-4">
             <div className="flex justify-start items-center gap-4">
               <LiaUserCheckSolid className="text-xl" />

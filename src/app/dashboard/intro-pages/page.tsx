@@ -5,18 +5,8 @@ import BreadcrumbList from "@/components/dashboard/Breadcrumb/BreadcrumbList";
 import Image from "next/image";
 import React, { useState } from "react";
 import arrowDown from "../../.././../public/img for salla/dashboard/arrow-down.svg";
-import hashImg from "../../../../public/img for salla/dashboard/hash.png";
 import infoImg from "../../../../public/img for salla/dashboard/icons8-info-popup-32.png";
-import dateImg from "../../../../public/img for salla/dashboard/icons8-calendar-50.png";
-import cartonImg from "../../../../public/img for salla/dashboard/icons8-carton-50.png";
-import editImg from "../../../../public/img for salla/dashboard/icons8-edit-50.png";
-import moneyImg from "../../../../public/img for salla/dashboard/icons8-money-30.png";
-import peopleImg from "../../../../public/img for salla/dashboard/icons8-users-48.png";
 import plusImg from "../../../../public/img for salla/dashboard/+.png";
-import boxImg from "../../../../public/img for salla/dashboard/icons8-box-96.png";
-import serviceImg from "../../../../public/img for salla/dashboard/icons8-handbag-24.png";
-import bookImg from "../../../../public/img for salla/dashboard/icons8-book-50.png";
-import rightImg from "../../../../public/img for salla/dashboard/check.png";
 import mapImg from "../../../../public/img for salla/dashboard/vuesax-broken-map.png";
 import moreImg from "../../../../public/img for salla/dashboard/vuesax-broken-more.png";
 import boldImg from "../../../../public/img for salla/dashboard/B.png";
@@ -28,6 +18,9 @@ import pictureImg from "../../../../public/img for salla/dashboard/icons8-pictur
 import bannerImg from "../../../../public/img for salla/dashboard/icons8-ad-banner-32.png";
 import Link from "next/link";
 import Modal from "@/components/utils/Modal";
+import HelpButton from "@/components/dashboard/HelpButton/HelpButton";
+import AlertBar from "@/components/utils/AlertBar";
+import AddButton from "@/components/dashboard/AddButton/AddButton";
 
 const page = () => {
   const [showCreate, setShowCreate] = useState(false);
@@ -43,46 +36,15 @@ const page = () => {
             url="/dashboard/intro-pages"
           />
         </BreadcrumbList>
-        <button className="bg-primary rounded-full w-44 h-14 flex justify-between items-center px-6">
-          <Image src={infoImg} alt="down" priority width={24} height={24} />
-          <span className="text-xl text-black">مساعدة</span>
-          <Image src={arrowDown} alt="down" priority width={18} height={18} />
-        </button>
+        <HelpButton />
       </div>
 
-      <div className="p-4 mt-8 bg-[#E9E9E9] rounded-md flex justify-start items-center gap-3">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          xmlnsXlink="http://www.w3.org/1999/xlink"
-          width={35}
-          height={35}
-          viewBox="0 0 35 35"
-        >
-          <image
-            id="icons8-error-50"
-            width={35}
-            height={35}
-            xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAACXBIWXMAAAsTAAALEwEAmpwYAAAC8ElEQVR4nO2ZW4hNURjHf2aMy7gO0QhDrrmlUWRCIsWDywMPg6JGlHjgZV6QiaYQuT3wYF4oE0UUUZLGRNFEI5OUZDAuTe7369aq/9RubOfs2zl7b51ffbVa6/vW+n/nsvZa34YcORLLMqCchDMJ+CWbQkLpANQDluy6+hLHciXwQmapL1EUAs0SXwGsUvsp0I0EsV3CbwF5spvq20ZCGAx8kugZtv4y4DfwGRhKAjipJI47jNVq7AQxZ5rtUx/iMD4I+KhkZhJT8oAGidyawq9KPreBfGLIGgl8kmZn6go8ku9qYkZP4LnEuTmOLJXvS6A3MWKPj6f3VcXsJiaMAL7qPDXZQ1ypYr4Do4kB5/XJHvERW6PYc0TMPAl5BxQ7jHcCimSm3Z5ixVqaKxIKgHsSUfkPny22069pO1GpcTOXmTPrbJSAB0DnNM8MS20nzDd1Xz4byDJ9gFdafGEKPzeJGBbJ5w3QjyxyWAtfTuPnNhHDRfkdIkuMA34AP4EJISYyVluxmXciWeCKhB1w4eslEcNB+dZn+lq8RAu9BvpmIJEioFX+i8kQXYCHWmSdyxiviRjWy79ZV+bQ2awFmjzs934SyQfuKGYTITMQ+KDJ53qI85OIYbZizJW5hBA5ponPeIzzm4jhrOKOEhJTdX39BozKYiLDdao2a08nIGYLvCEhO3zEB0nEsFOxDbpK+2alrVrYK4JEegDPFL8Cn3QHWmzVwiA7naW2HyoU3yJNnqkO4WstsN1HCkKozlR7DR4GfNEfzV4tjIoy24Yz0kvg6RTVwqiolaZTbgNmhfgwatt1jO0KOFeJraZsNKY9HjS6qBa6Za8tEdMOSpXmugt0TOW4Vo6PQzqwhZ1IobRZ0pr2CB3Wy0vz+mCOzKmo7YdyaWyV5r/YL4drCXjXVyet+9oPjNE102u1MCpKpdVcucfbBy4EqBZGRY00X2rrWKCO98AAkkN/4K20z0c3Pivh1mQv7yfZ6qL+eeT4b/kDXLNVbksXjZ8AAAAASUVORK5CYII="
-          />
-        </svg>
-        <p className="text-lg">
-          هذه الميزة متوفرة فقط فى باقة متجر بلس, متجر سبيشال, متجر برو,{" "}
-          <Link href={"#"} className="text-pribg-primary underline">
-            إضغط هنا
-          </Link>
-        </p>
-      </div>
+      <AlertBar
+        title={"هذه الميزة متوفرة فقط فى باقة متجر بلس, متجر سبيشال, متجر برو,"}
+      />
 
-      <div className="flex justify-between items-center mt-8">
-        <button
-          className="w-[200px] h-16 bg-primary rounded-full px-2 gap-6 text-2xl flex justify-start"
-          onClick={() => setShowCreate(true)}
-        >
-          <span className="w-10 h-10 bg-white rounded-full flex justify-center items-center">
-            <Image src={plusImg} alt="plus" priority />
-          </span>
-          <span>صفحة جديدة</span>
-        </button>
+      <div className="mt-10">
+        <AddButton title={"صفحة جديدة"} />
       </div>
 
       <div className="mt-14 border border-[#707070] rounded-lg p-4">
