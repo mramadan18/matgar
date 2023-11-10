@@ -22,13 +22,15 @@ export default function RootLayout({
               onClick={() => setShowSidebar(false)}
             ></div>
           )}
-          <div className="fixed top-0 right-0 h-full w-[360px] z-10 bg-white shadow-xl hidden lg:block">
-            <UserSideBar />
-          </div>
+
           <div
-            className="fixed top-0 h-full w-3/4 z-10 bg-white shadow-xl transition-all block lg:hidden"
+            className="fixed top-0 h-full w-3/4 z-10 bg-[#F2F2F2] shadow-xl transition-all block lg:hidden"
             style={{ right: showSidebar ? "0" : "-100%" }}
           >
+            <UserSideBar />
+          </div>
+
+          <div className="fixed top-0 right-0 h-full w-[360px] bg-[#F2F2F2] shadow-xl hidden lg:block">
             <UserSideBar />
           </div>
 

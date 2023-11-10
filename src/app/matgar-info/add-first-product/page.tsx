@@ -123,7 +123,7 @@ const page = () => {
         <div className="flex justify-between my-14">
           <div className="flex items-center gap-x-6">
             <Link
-              href="/we-get-to-know-you"
+              href={"/matgar-info/trader-info"}
               className="text-2xl flex justify-center items-center gap-4"
             >
               <BsChevronRight className="!text-xl text-black hover:text-primary" />
@@ -132,7 +132,7 @@ const page = () => {
           </div>
 
           <div className="flex gap-x-6">
-            <Link href="/matjar-info/trader-info">
+            <Link href={"/matgar-info/transporting-options"}>
               <button className="rounded-xl py-3 px-14 text-2xl">تأكيد</button>
             </Link>
           </div>

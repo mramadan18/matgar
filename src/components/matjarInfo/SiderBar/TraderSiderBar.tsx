@@ -19,32 +19,32 @@ const TraderSideBar = () => {
       <div className="Nav">
         <ul>
           <LinkNav
-            url={"/matjar-info/trader-info"}
+            url={"/matgar-info/trader-info"}
             img={homeImg}
             name="معلومات التاجر"
           />
           <LinkNav
-            url={"/matjar-info/add-first-product"}
+            url={"/matgar-info/add-first-product"}
             img={orderImg}
             name="أضف أول منتج"
           />
           <LinkNav
-            url={"/matjar-info/transporting-options"}
+            url={"/matgar-info/transporting-options"}
             img={userImg}
             name="فعل خيارات الشحن"
           />
           <LinkNav
-            url={"/matjar-info/e-payment"}
+            url={"/matgar-info/e-payment"}
             img={reports}
             name="فعل المدفوعات الالكترونيه"
           />
           <LinkNav
-            url={"/matjar-info/design-choose"}
+            url={"/matgar-info/design-choose"}
             img={settingImg}
             name="اختر تصميمات متجرك"
           />
           <LinkNav
-            url={"/matjar-info/packages"}
+            url={"/matgar-info/packages"}
             img={subtitleImg}
             name="اكتشف باقات المتجر"
           />

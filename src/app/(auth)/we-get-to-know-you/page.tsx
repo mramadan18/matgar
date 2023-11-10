@@ -17,8 +17,8 @@ const page = () => {
         <div className="mt-8 flex-col">
           <span className="text-2xl">هل لديك خبرة في التجارة؟ (مطلوب)</span>
           <div className="flex gap-x-2 mt-4">
-            <button className="rounded-full h-7 w-24 text-xl py-6">نعم</button>
-            <button className="rounded-full h-7 w-24 text-xl py-6 bg-white text-black border border-[#707070]">
+            <button className="rounded-full h-7 w-max text-xl py-6">نعم</button>
+            <button className="rounded-full h-7 w-max text-xl py-6 bg-white text-black border border-[#707070]">
               ليس بعد
             </button>
           </div>
@@ -39,10 +39,10 @@ const page = () => {
         <div className="mt-14 flex-col">
           <span className="text-2xl">كيف سبق لك ممارسة التجارة؟ (مطلوب)</span>
           <div className="flex gap-x-2 mt-4">
-            <button className="rounded-full h-7 w-max text-xl px-10 py-6">
+            <button className="rounded-full h-7 w-max text-xl px-10 py-[24px] md:py-6">
               عن طريق محل تجاري
             </button>
-            <button className="rounded-full h-7 w-max text-xl px-10 py-6 bg-white text-black border border-[#707070]">
+            <button className="rounded-full h-7 w-max text-xl px-10 py-[24px] md:py-6 bg-white text-black border border-[#707070]">
               عن طريق منصات التواصل الاجتماعي مثل انستقرام
             </button>
           </div>

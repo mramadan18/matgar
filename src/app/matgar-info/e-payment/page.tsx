@@ -16,7 +16,7 @@ const page = () => {
         <div className="flex justify-between items-center mt-32">
           <div className="flex items-center gap-x-6">
             <Link
-              href="/we-get-to-know-you"
+              href={"/matgar-info/e-payment"}
               className="text-2xl flex justify-center items-center gap-4"
             >
               <BsChevronRight className="!text-xl text-black hover:text-primary" />
@@ -25,7 +25,7 @@ const page = () => {
           </div>
 
           <div className="flex gap-x-6">
-            <Link href="/matjar-info/trader-info">
+            <Link href={"/matgar-info/design-choose"}>
               <button className="rounded-xl py-3 px-14 text-2xl">تأكيد</button>
             </Link>
           </div>

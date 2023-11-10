@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import Layout from "../Layout";
 import Previews from "@/components/utils/Previews";
 
@@ -31,7 +32,7 @@ const page = () => {
             <label className="text-2xl mb-4" htmlFor="matjar-link">
               رابط المتجر
             </label>
-            <span className="-mt-4 text-xs mb-2">
+            <span className="-mt-4 text-sm mb-2">
               حدد الرابط الخاص بمتجرك لتمكّن عملائك للوصول للمتجر والطلب
             </span>
             <input type="text" id="matjar-link" className="py-3 px-4" />
@@ -57,22 +58,25 @@ const page = () => {
           <div className="mt-6 flex-col">
             <label className="text-2xl mb-4">نوع الكيان</label>
             <div className="flex gap-x-4 mt-4">
-              <button className="rounded-full text-xl w-32 h-14">فرد</button>
-              <button className="rounded-full text-xl w-32 h-14 bg-white text-black border border-[#707070]">
+              <button className="rounded-full text-xl w-max h-14">فرد</button>
+              <button className="rounded-full text-xl w-max h-14 bg-white text-black border border-[#707070]">
                 مؤسسه
               </button>
-              <button className="rounded-full text-xl w-32 h-14 bg-white text-black border border-[#707070]">
+              <button className="rounded-full text-xl w-max h-14 bg-white text-black border border-[#707070]">
                 شركه
               </button>
-              <button className="rounded-full text-xl w-32 h-14 bg-white text-black border border-[#707070]">
+              <button className="rounded-full text-xl w-max h-14 bg-white text-black border border-[#707070]">
                 مؤسسه خيريه
               </button>
             </div>
           </div>
         </form>
-        <div className="flex justify-end mt-20">
+        <Link
+          href={"/matgar-info/add-first-product"}
+          className="flex justify-end mt-20"
+        >
           <button className="rounded-xl py-3 px-14 text-2xl">التالي</button>
-        </div>
+        </Link>
       </div>
     </Layout>
   );

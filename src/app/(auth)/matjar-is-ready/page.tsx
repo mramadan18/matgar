@@ -74,7 +74,7 @@ const page = () => {
                 تخطي
               </button>
             </Link>
-            <Link href="/matjar-info/trader-info">
+            <Link href="/matgar-info/trader-info">
               <button className="rounded-xl py-3 px-14 text-2xl">تأكيد</button>
             </Link>
           </div>
