@@ -3,7 +3,7 @@ import Image from "next/image";
 import welcomeImg from "#/img for salla/auth/Privacy policy-rafiki.png";
 import Link from "next/link";
 import baseUrl from "@/baseUrl";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { toast } from "react-toastify";
 
@@ -55,6 +55,12 @@ const page = () => {
     }
   };
 
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      push("/dashboard/main");
+    }
+  }, []);
+
   return (
     <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[90vh] text-right overflow-hidden">
       <div className="flex flex-col w-full md:w-[40%] mt-10 md:mt-0">
@@ -62,13 +68,12 @@ const page = () => {
           className="tabs__head anime-item flex flex-row-reverse"
           style={{ transform: "translateY(0px)", opacity: 1 }}
         >
-          {" "}
           <div className="w-[50%]">
             <Link href={"/signup"}>
               <h3 className="tabs__label second">إنشاء حساب</h3>
             </Link>
           </div>
-          <h3 className="tabs__label first active">تسجيل الدخول</h3>{" "}
+          <h3 className="tabs__label first active">تسجيل الدخول</h3>
         </div>
         <div className="register__login-form tabs__tab form">
           <form onSubmit={handleSubmit}>
@@ -78,7 +83,7 @@ const page = () => {
             >
               <label htmlFor="user-email" className="register__label">
                 البريد الإلكتروني
-              </label>{" "}
+              </label>
               <input
                 dir="rtl"
                 id="login-email"
@@ -98,7 +103,7 @@ const page = () => {
             >
               <label htmlFor="user-password" className="register__label">
                 كلمة المرور
-              </label>{" "}
+              </label>
               <div className="Password">
                 <div className="Password__group">
                   <input
@@ -123,8 +128,8 @@ const page = () => {
                     ></button>
                   </div>
                 </div>
-              </div>{" "}
-            </div>{" "}
+              </div>
+            </div>
             <div
               className="form__field form__field-remember flex justify-between anime-item"
               style={{ transform: "translateY(0px)", opacity: 1 }}
@@ -140,9 +145,9 @@ const page = () => {
                     <p>تذكرنى</p>
                   </div>
                 </div>
-              </div>{" "}
+              </div>
               <a href="#">نسيت كلمة المرور ؟</a>
-            </div>{" "}
+            </div>
             <div
               className="anime-item"
               style={{ transform: "translateY(0px)", opacity: 1 }}
@@ -151,7 +156,7 @@ const page = () => {
                 type="submit"
                 className="btn btn--medium w-full bg-[#0279de] "
               >
-                <span className="btn__text py-[10px]"> تسجيل الدخول</span>{" "}
+                <span className="btn__text py-[10px]"> تسجيل الدخول</span>
                 <div className="loader-wrap">
                   <div className="loader"></div>
                 </div>

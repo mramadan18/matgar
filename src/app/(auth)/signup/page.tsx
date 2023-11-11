@@ -3,7 +3,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import welcomeImg from "#/img for salla/auth/Privacy policy-rafiki.png";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import baseUrl from "@/baseUrl";
 import { toast } from "react-toastify";
 
@@ -39,10 +39,13 @@ const page = () => {
       });
 
       push("/login");
-    } catch (error) {
-      console.log(error);
+    } catch ({ response }: any) {
+      const message = Array.isArray(response?.data?.message)
+        ? response?.data?.message[0]
+        : response?.data?.message;
+
       // Notify
-      toast.error("Error, check the data and try again", {
+      toast.error(message, {
         position: "top-center",
         autoClose: 5000,
         hideProgressBar: false,
@@ -54,6 +57,12 @@ const page = () => {
       });
     }
   };
+
+  useEffect(() => {
+    if (localStorage.getItem("token")) {
+      push("/dashboard/main");
+    }
+  }, []);
 
   return (
     <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[100vh] text-rightmd:mt-0 overflow-hidden">

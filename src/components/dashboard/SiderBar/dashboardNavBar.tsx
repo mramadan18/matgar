@@ -6,6 +6,7 @@ import DartImage from "public/img for salla/dashboard/icons8-moon-50.png";
 import defualtUser from "public/img for salla/dashboard/vuesax-bulk-profile-circle.png";
 import searchImg from "#/img for salla/dashboard/vuesax-broken-search-normal.png";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useRouter } from "next/navigation";
 
 interface User {
   name: string;
@@ -20,7 +21,16 @@ const DashboardNavBar = ({
   children: React.ReactNode;
   setShowSidebar: (value: boolean) => void;
 }) => {
+  const { push } = useRouter();
   const [user, setUser] = useState<User>();
+  const [showDropdown, setShowDropdown] = useState(false);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    push("/login");
+  };
+
   useEffect(() => {
     setUser(JSON.parse(String(localStorage.getItem("user"))));
   }, []);
@@ -53,9 +63,43 @@ const DashboardNavBar = ({
           />
           <Image src={giftImg} alt={"gift-Image"} width={30} />
           <Image src={DartImage} alt={"moon-image"} width={30} />
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex justify-center items-center gap-1 relative">
             <Image src={defualtUser} alt={"profile"} width={30} />
-            <h3>{user?.name}</h3>
+            <button
+              onClick={() => setShowDropdown(!showDropdown)}
+              id="dropdownDefaultButton"
+              className="text-black font-bold text-lg text-center flex items-center"
+              type="button"
+            >
+              {user?.name}{" "}
+              <svg
+                className="w-2.5 h-2.5 ms-3"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 6"
+              >
+                <path
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={2}
+                  d="m1 1 4 4 4-4"
+                />
+              </svg>
+            </button>
+            {/* Dropdown menu */}
+            {showDropdown && (
+              <div className="absolute top-14 left-0 z-10 bg-white w-full rounded-lg shadow-xl">
+                <ul className="py-2 text-center">
+                  <li onClick={handleLogout}>
+                    <a href="#" className="block px-4 py-2 hover:text-primary">
+                      تسجيل الخروج
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            )}
           </div>
         </div>
       </div>
