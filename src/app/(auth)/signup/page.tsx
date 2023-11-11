@@ -2,86 +2,116 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import welcomeImg from "../../../../public/img for salla/auth/Privacy policy-rafiki.png";
+import welcomeImg from "#/img for salla/auth/Privacy policy-rafiki.png";
+import { useState } from "react";
+import baseUrl from "@/baseUrl";
+import { toast } from "react-toastify";
 
 const page = () => {
   const { push } = useRouter();
-  const handleSubmit = (e: React.FormEvent) => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    push("/we-get-to-know-you");
+    const config = {
+      headers: { "Content-Type": "application/json" },
+    };
+
+    try {
+      await baseUrl.post(
+        "/user/register/",
+        { name, email, phone, password, role: "admin" },
+        config
+      );
+      // Notify
+      toast.success("Your account has been created successfully", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
+      push("/login");
+    } catch (error) {
+      console.log(error);
+      // Notify
+      toast.error("Error, check the data and try again", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
   };
 
   return (
     <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[100vh] text-rightmd:mt-0 overflow-hidden">
       <div className="flex flex-col w-full md:w-[40%] mt-14 md:mt-0">
-        <div
-          className="tabs__head anime-item flex flex-row-reverse"
-          style={{ transform: "translateY(0px)", opacity: 1 }}
-        >
+        <div className="flex flex-row-reverse">
           <h3 className="tabs__label active second">إنشاء حساب</h3>
           <div className="w-[50%]">
             <Link href={"/login"}>
-              <h3 className="tabs__label first">تسجيل الدخول</h3>{" "}
+              <h3 className="tabs__label first">تسجيل الدخول</h3>
             </Link>
           </div>
         </div>
         <div className="register__login-form tabs__tab form">
           <form onSubmit={handleSubmit}>
-            <div
-              className="form__field anime-item"
-              style={{ transform: "translateY(0px)", opacity: 1 }}
-            >
-              <label htmlFor="name-trader" className="register__label">
-                اسم التاجر
-              </label>
+            <div className="mb-[30px]">
+              <label htmlFor="name-trader">اسم التاجر</label>
               <input
                 className="px-4"
                 id="name-trader"
                 name="name-trader"
                 type="text"
                 placeholder="أدخل اسم التاجر"
-                autoComplete="username"
+                autoComplete="name"
+                required
+                value={name}
+                onChange={({ target }) => setName(target.value)}
               />
             </div>
-            <div
-              className="form__field anime-item"
-              style={{ transform: "translateY(0px)", opacity: 1 }}
-            >
-              <label htmlFor="user-email" className="register__label">
-                البريد الإلكتروني
-              </label>
+            <div className="mb-[30px]">
+              <label htmlFor="user-email">البريد الإلكتروني</label>
               <input
-                className="px-4"
+                className="!px-4"
                 id="login-email"
                 name="email"
                 type="email"
                 placeholder="أدخل البريد الإلكتروني"
-                autoComplete="username"
+                autoComplete="email"
+                required
+                value={email}
+                onChange={({ target }) => setEmail(target.value)}
               />
             </div>
-            <div
-              className="form__field anime-item"
-              style={{ transform: "translateY(0px)", opacity: 1 }}
-            >
-              <label htmlFor="phone" className="register__label">
-                رقم الجوال
-              </label>
+            <div className="mb-[30px]">
+              <label htmlFor="phone">رقم الجوال</label>
               <input
-                className="px-4"
+                className="px-4 text-right"
                 id="phone"
                 name="phone"
-                type="number"
+                type="tel"
                 placeholder="أدخل رقم الجوال"
-                autoComplete="username"
+                autoComplete="phone"
+                required
+                value={phone}
+                onChange={({ target }) => setPhone(target.value)}
               />
             </div>
-            <div
-              className="form__field anime-item"
-              style={{ transform: "translateY(0px)", opacity: 1 }}
-            >
-              <label htmlFor="user-password" className="register__label">
-                كلمة المرور
-              </label>{" "}
+            <div>
+              <label htmlFor="user-password">كلمة المرور</label>
               <div className="Password">
                 <div className="Password__group">
                   <input
@@ -91,7 +121,10 @@ const page = () => {
                     placeholder="أدخل كلمة المرور"
                     autoComplete="current-password"
                     type="password"
-                  />{" "}
+                    required
+                    value={password}
+                    onChange={({ target }) => setPassword(target.value)}
+                  />
                   <div className="Password__toggle">
                     <button
                       type="button"
@@ -100,12 +133,9 @@ const page = () => {
                     ></button>
                   </div>
                 </div>
-              </div>{" "}
-            </div>{" "}
-            <div
-              className="form__field form__field-remember flex justify-between anime-item"
-              style={{ transform: "translateY(0px)", opacity: 1 }}
-            >
+              </div>
+            </div>
+            <div className="form__field form__field-remember flex justify-between anime-item">
               <div className="remember">
                 <div className="rec-checkbox flex flex-row-reverse items-center gap-2">
                   <div className="flex items-center">
@@ -117,18 +147,15 @@ const page = () => {
                     style={{ height: "20px", width: "20px", cursor: "pointer" }}
                   />
                 </div>
-              </div>{" "}
+              </div>
               <a href="#">نسيت كلمة المرور ؟</a>
-            </div>{" "}
-            <div
-              className="anime-item"
-              style={{ transform: "translateY(0px)", opacity: 1 }}
-            >
+            </div>
+            <div className="anime-item">
               <button
                 type="submit"
                 className="btn btn--medium w-full bg-[#0279de]"
               >
-                <span className="btn__text py-[10px]"> تسجيل الدخول</span>{" "}
+                <span className="btn__text py-[10px]"> تسجيل الدخول</span>
                 <div className="loader-wrap">
                   <div className="loader"></div>
                 </div>
@@ -139,25 +166,11 @@ const page = () => {
       </div>
       <div className="title title--hero flex flex-col w-full md:w-[50%] gap-3">
         <Image src={welcomeImg} alt={"welcome-img"} />
-        <div className=" w-full text-center">
-          <h2
-            className="anime-item opacity-0 w-full"
-            style={{
-              transform: "translateY(0px) translateZ(0px)",
-              opacity: 1,
-            }}
-          >
-            كل ما تحتاجه لتنمو بتجارتك الإلكترونية
-          </h2>
-          <p
-            className="anime-item opacity-0 w-full"
-            style={{
-              transform: "translateY(0px) translateZ(0px)",
-              opacity: 1,
-            }}
-          >
+        <div className="w-full text-center">
+          <h2 className="w-full">كل ما تحتاجه لتنمو بتجارتك الإلكترونية</h2>
+          <p className="w-full">
             سجل الآن وانضم لأكثر من 30 ألف متجر يستفيد من مئات الخدمات
-            اللوجيستية والأدوات التسويقية المتكاملة في منصة سلة{" "}
+            اللوجيستية والأدوات التسويقية المتكاملة في منصة سلة
           </p>
         </div>
       </div>

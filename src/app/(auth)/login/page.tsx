@@ -1,8 +1,60 @@
+"use client";
 import Image from "next/image";
-import welcomeImg from "../../../../public/img for salla/auth/Privacy policy-rafiki.png";
+import welcomeImg from "#/img for salla/auth/Privacy policy-rafiki.png";
 import Link from "next/link";
+import baseUrl from "@/baseUrl";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { toast } from "react-toastify";
 
 const page = () => {
+  const { push } = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    const config = {
+      headers: { "Content-Type": "application/json" },
+    };
+
+    try {
+      const { data } = await baseUrl.post(
+        "/user/signin/",
+        { email, password },
+        config
+      );
+      localStorage.setItem("token", data.token);
+      localStorage.setItem("user", JSON.stringify(data.userResponse));
+      // Notify
+      toast.success("You are logged in successfully", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+
+      push("/dashboard/main");
+    } catch (error) {
+      console.log(error);
+      // Notify
+      toast.error("Error, check the data and try again", {
+        position: "top-center",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    }
+  };
+
   return (
     <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[90vh] text-right overflow-hidden">
       <div className="flex flex-col w-full md:w-[40%] mt-10 md:mt-0">
@@ -19,7 +71,7 @@ const page = () => {
           <h3 className="tabs__label first active">تسجيل الدخول</h3>{" "}
         </div>
         <div className="register__login-form tabs__tab form">
-          <form>
+          <form onSubmit={handleSubmit}>
             <div
               className="form__field anime-item"
               style={{ transform: "translateY(0px)", opacity: 1 }}
@@ -32,10 +84,14 @@ const page = () => {
                 id="login-email"
                 name="email"
                 type="email"
+                value={email}
                 placeholder="أدخل البريد الإلكتروني"
-                autoComplete="username"
-              />{" "}
-            </div>{" "}
+                autoComplete="email"
+                className="!px-4"
+                required
+                onChange={({ target }) => setEmail(target.value)}
+              />
+            </div>
             <div
               className="form__field anime-item"
               style={{ transform: "translateY(0px)", opacity: 1 }}
@@ -52,8 +108,13 @@ const page = () => {
                     placeholder="أدخل كلمة المرور"
                     autoComplete="current-password"
                     type="password"
-                    className="Password__field"
-                  />{" "}
+                    className="px-4"
+                    required
+                    value={password}
+                    onChange={({ target }) => {
+                      setPassword(target.value);
+                    }}
+                  />
                   <div className="Password__toggle">
                     <button
                       type="button"

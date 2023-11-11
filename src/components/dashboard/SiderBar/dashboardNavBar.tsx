@@ -1,10 +1,17 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import giftImg from "public/img for salla/dashboard/icons8-gift-50.png";
 import DartImage from "public/img for salla/dashboard/icons8-moon-50.png";
 import defualtUser from "public/img for salla/dashboard/vuesax-bulk-profile-circle.png";
 import searchImg from "#/img for salla/dashboard/vuesax-broken-search-normal.png";
 import { AiOutlineMenu } from "react-icons/ai";
+
+interface User {
+  name: string;
+  email: string;
+  phone: string;
+}
 
 const DashboardNavBar = ({
   children,
@@ -13,6 +20,10 @@ const DashboardNavBar = ({
   children: React.ReactNode;
   setShowSidebar: (value: boolean) => void;
 }) => {
+  const [user, setUser] = useState<User>();
+  useEffect(() => {
+    setUser(JSON.parse(String(localStorage.getItem("user"))));
+  }, []);
   return (
     <div className="navbar-container pt-6">
       <div className="flex justify-between gap-4 mb-10">
@@ -44,7 +55,7 @@ const DashboardNavBar = ({
           <Image src={DartImage} alt={"moon-image"} width={30} />
           <div className="flex justify-center items-center gap-4">
             <Image src={defualtUser} alt={"profile"} width={30} />
-            <h3>user</h3>
+            <h3>{user?.name}</h3>
           </div>
         </div>
       </div>
