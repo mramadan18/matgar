@@ -5,7 +5,11 @@ import { useRouter } from "next/navigation";
 import welcomeImg from "#/img for salla/auth/Privacy policy-rafiki.png";
 import { useEffect, useState } from "react";
 import baseUrl from "@/baseUrl";
-import { toast } from "react-toastify";
+import toast from "react-hot-toast";
+import { motion } from "framer-motion";
+import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
+import { PhoneInput } from "react-international-phone";
+import "react-international-phone/style.css";
 
 const page = () => {
   const { push } = useRouter();
@@ -13,9 +17,11 @@ const page = () => {
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    toast.loading("...loading");
     const config = {
       headers: { "Content-Type": "application/json" },
     };
@@ -27,16 +33,8 @@ const page = () => {
         config
       );
       // Notify
-      toast.success("Your account has been created successfully", {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.remove();
+      toast.success("You are logged in successfully");
 
       push("/login");
     } catch ({ response }: any) {
@@ -45,16 +43,8 @@ const page = () => {
         : response?.data?.message;
 
       // Notify
-      toast.error(message, {
-        position: "top-center",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-      });
+      toast.remove();
+      toast.error(message);
     }
   };
 
@@ -66,7 +56,16 @@ const page = () => {
 
   return (
     <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[100vh] text-rightmd:mt-0 overflow-hidden">
-      <div className="flex flex-col w-full md:w-[40%] mt-14 md:mt-0">
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, x: 150 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        transition={{ duration: 1, ease: [0.645, 0.045, 0.3, 1] }}
+        className="flex flex-col w-full md:w-[40%] mt-14 md:mt-0"
+      >
         <div className="flex flex-row-reverse">
           <h3 className="tabs__label active second">إنشاء حساب</h3>
           <div className="w-[50%]">
@@ -107,40 +106,52 @@ const page = () => {
             </div>
             <div className="mb-[30px]">
               <label htmlFor="phone">رقم الجوال</label>
-              <input
-                className="px-4 text-right"
-                id="phone"
-                name="phone"
-                type="tel"
-                placeholder="أدخل رقم الجوال"
-                autoComplete="phone"
-                required
-                value={phone}
-                onChange={({ target }) => setPhone(target.value)}
-              />
+              <div className="relative">
+                <PhoneInput
+                  className="p-0"
+                  defaultCountry="sa"
+                  inputClassName="!border !border-[#707070] !text-black !px-4 !rounded-[4px] !rounded-r-none !rounded-b-none"
+                  inputProps={{
+                    placeholder: "أدخل رقم الجوال",
+                  }}
+                  countrySelectorStyleProps={{
+                    className:
+                      "!border !border-r-2 !border-[#707070] !border-l-0",
+                  }}
+                  hideDropdown
+                  name="phone"
+                  required
+                  value={phone}
+                  onChange={(value) => setPhone(value)}
+                />
+              </div>
             </div>
-            <div>
+            <div className="mb-[30px]">
               <label htmlFor="user-password">كلمة المرور</label>
               <div className="Password">
-                <div className="Password__group">
+                <div className="Password__group relative">
                   <input
                     className="px-4"
                     id="login-password"
                     name="password"
                     placeholder="أدخل كلمة المرور"
                     autoComplete="current-password"
-                    type="password"
+                    type={showPassword ? "text" : "password"}
                     required
                     value={password}
                     onChange={({ target }) => setPassword(target.value)}
                   />
-                  <div className="Password__toggle">
-                    <button
-                      type="button"
-                      aria-label="show"
-                      className="btn-clean"
-                    ></button>
-                  </div>
+                  {showPassword ? (
+                    <AiOutlineEyeInvisible
+                      onClick={() => setShowPassword(false)}
+                      className="absolute top-1/2 left-4 -translate-y-1/2"
+                    />
+                  ) : (
+                    <AiOutlineEye
+                      onClick={() => setShowPassword(true)}
+                      className="absolute top-1/2 left-4 -translate-y-1/2"
+                    />
+                  )}
                 </div>
               </div>
             </div>
@@ -160,20 +171,23 @@ const page = () => {
               <a href="#">نسيت كلمة المرور ؟</a>
             </div>
             <div className="anime-item">
-              <button
-                type="submit"
-                className="btn btn--medium w-full bg-[#0279de]"
-              >
-                <span className="btn__text py-[10px]"> تسجيل الدخول</span>
-                <div className="loader-wrap">
-                  <div className="loader"></div>
-                </div>
+              <button type="submit" className="w-full bg-primary text-lg py-2">
+                تسجيل
               </button>
             </div>
           </form>
         </div>
-      </div>
-      <div className="title title--hero flex flex-col w-full md:w-[50%] gap-3">
+      </motion.div>
+      <motion.div
+        initial="hidden"
+        animate="visible"
+        variants={{
+          hidden: { opacity: 0, x: -150 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        transition={{ duration: 1, ease: [0.645, 0.045, 0.3, 1] }}
+        className="title title--hero flex flex-col w-full md:w-[50%] gap-3"
+      >
         <Image src={welcomeImg} alt={"welcome-img"} />
         <div className="w-full text-center">
           <h2 className="w-full">كل ما تحتاجه لتنمو بتجارتك الإلكترونية</h2>
@@ -182,7 +196,7 @@ const page = () => {
             اللوجيستية والأدوات التسويقية المتكاملة في منصة سلة
           </p>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

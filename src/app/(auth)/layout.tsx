@@ -1,8 +1,7 @@
 import Logo from "@/components/Layout/Header/Logo";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { Toaster } from "react-hot-toast";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -19,7 +18,7 @@ export default function AuthLayout({
   return (
     <html lang="ar" dir="rtl">
       <body className={inter.className}>
-        <ToastContainer />
+        <Toaster position="top-center" reverseOrder={false} />
         <div className="content-container flex justify-between items-center mx-auto px-10 py-10">
           <Logo />
         </div>
