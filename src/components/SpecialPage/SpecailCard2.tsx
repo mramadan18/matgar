@@ -1,7 +1,13 @@
-import { propsValues } from "@/interface/sectionRowPhoto";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
-const SpecailCard2 = (props: propsValues) => {
+interface PropsValue {
+  img: string | StaticImport;
+  head: string;
+  subHead: string;
+}
+
+const SpecailCard2 = ({ img, head, subHead }: PropsValue) => {
   return (
     <a
       href="#"
@@ -11,11 +17,11 @@ const SpecailCard2 = (props: propsValues) => {
       }}
     >
       <span className="border border-primary h-20 md:h-14">
-        <Image src={props.img} alt="store-photo" className="w-full h-full " />
+        <Image src={img} alt="store-photo" className="w-full h-full " />
       </span>
       <article>
-        <h2> {props.head}</h2>
-        <p>{props.subHead}</p>
+        <h2> {head}</h2>
+        <p>{subHead}</p>
       </article>
     </a>
   );
