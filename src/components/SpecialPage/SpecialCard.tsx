@@ -1,7 +1,13 @@
-import { propsValues } from "@/interface/sectionRowPhoto";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 
-const SpecialCard = (props: propsValues) => {
+interface PropsValue {
+  img: string | StaticImport;
+  head: string;
+  subHead: string;
+}
+
+const SpecialCard = ({ img, head, subHead }: PropsValue) => {
   return (
     <div
       data-aos="zoom-out-up"
@@ -12,12 +18,12 @@ const SpecialCard = (props: propsValues) => {
     >
       <span className="anime-item ard-entry__icon">
         <i className="sicon-store">
-          <Image src={props.img} alt={`${props.img}`} />
+          <Image src={img} alt={`${img}`} />
         </i>
       </span>
       <article className="text-center">
-        <h2 className="mb-3">{props.head}</h2>
-        <p>{props.subHead} </p>
+        <h2 className="mb-3">{head}</h2>
+        <p>{subHead} </p>
       </article>
     </div>
   );

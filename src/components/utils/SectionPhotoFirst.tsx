@@ -1,8 +1,15 @@
-import { propsValues } from "@/interface/sectionRowPhoto";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
 
-const SectionPhotoFirst = (props: propsValues) => {
+interface PropsValue {
+  img: string | StaticImport;
+  head: string;
+  subHead: string;
+  ul: string[];
+}
+
+const SectionPhotoFirst = ({ img, head, subHead, ul }: PropsValue) => {
   return (
     <div className="anime-block home-block feature-block bg-white dark:bg-darker-200 end my-[25px]">
       <div className="content-container">
@@ -14,7 +21,7 @@ const SectionPhotoFirst = (props: propsValues) => {
             <Image
               decoding="async"
               className="block"
-              src={props.img}
+              src={img}
               alt="marketing"
             />
           </div>
@@ -26,7 +33,7 @@ const SectionPhotoFirst = (props: propsValues) => {
                     className="anime-text opacity-0"
                     style={{ opacity: 1, transform: "translateY(0px)" }}
                   >
-                    {props.head}{" "}
+                    {head}{" "}
                   </h2>
                   <p
                     className="anime-text opacity-0"
@@ -36,13 +43,13 @@ const SectionPhotoFirst = (props: propsValues) => {
                       width: "100%",
                     }}
                   >
-                    {props.subHead}
+                    {subHead}
                   </p>
                   <ul
                     className="list list--flat list--bullets mt-7 opacity-70"
                     style={{ lineHeight: "40px" }}
                   >
-                    {props.ul?.map((e) => (
+                    {ul?.map((e) => (
                       <li
                         className="anime-text opacity-0"
                         style={{ opacity: 1, transform: "translateY(0px)" }}

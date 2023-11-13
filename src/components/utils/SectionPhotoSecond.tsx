@@ -1,8 +1,15 @@
-import { propsValues } from "@/interface/sectionRowPhoto";
+import { StaticImport } from "next/dist/shared/lib/get-img-props";
 import Image from "next/image";
 import React from "react";
 
-const SectionPhotoSecond = (props: propsValues) => {
+interface PropsValue {
+  img: string | StaticImport;
+  head: string;
+  subHead: string;
+  ul: string[];
+}
+
+const SectionPhotoSecond = ({ img, head, subHead, ul }: PropsValue) => {
   return (
     <div className="anime-block home-block feature-block px-6 bg-grayer-100 dark:bg-darker-250 mb-[25px] rounded mt-36">
       <div className="content-container">
@@ -15,7 +22,7 @@ const SectionPhotoSecond = (props: propsValues) => {
                     className="anime-text opacity-0"
                     style={{ opacity: 1, transform: "translateY(0px)" }}
                   >
-                    {props.head}{" "}
+                    {head}{" "}
                   </h2>
                   <p
                     className="anime-text opacity-0"
@@ -25,7 +32,7 @@ const SectionPhotoSecond = (props: propsValues) => {
                       width: "100%",
                     }}
                   >
-                    {props.subHead}
+                    {subHead}
                   </p>
                 </div>
 
@@ -33,7 +40,7 @@ const SectionPhotoSecond = (props: propsValues) => {
                   className="list list--flat list--bullets mt-7 opacity-70"
                   style={{ lineHeight: "30px" }}
                 >
-                  {props.ul?.map((e) => (
+                  {ul?.map((e) => (
                     <li
                       className="anime-text opacity-0"
                       style={{ opacity: 1, transform: "translateY(0px)" }}
@@ -49,12 +56,7 @@ const SectionPhotoSecond = (props: propsValues) => {
             className="anime-item opacity-0"
             style={{ opacity: 1, transform: "translateY(0px)" }}
           >
-            <Image
-              decoding="async"
-              className="block"
-              src={props.img}
-              alt="wallet"
-            />
+            <Image decoding="async" className="block" src={img} alt="wallet" />
           </div>
         </div>
       </div>
