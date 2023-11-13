@@ -9,9 +9,9 @@ export interface NormalLinkProps {
 const NormalLink = (props: NormalLinkProps) => {
   const pathname = usePathname();
   return (
-    <li className="opacity-100 cursor-pointer justify-center relative">
+    <li>
       <Link
-        className="font-bold gap-3 px-2 py-4 whitespace-nowrap"
+        className="font-bold"
         href={props.linkPath}
         style={pathname === "/special" ? { color: "#fff" } : { color: "#000" }}
       >

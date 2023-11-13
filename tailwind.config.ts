@@ -13,19 +13,22 @@ const config: Config = {
       padding: {
         DEFAULT: "1rem",
         sm: "2rem",
-        lg: "6rem",
-        xl: "15rem",
-        "2xl": "21.1rem",
+        lg: "4rem",
+        xl: "5rem",
+        "2xl": "6rem",
       },
     },
     extend: {
       colors: {
         primary: "#0279DE",
+        second: "#707070",
       },
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      screens: {
+        sm: "576px",
+        md: "768px",
+        lg: "992px",
+        xl: "1200px",
+        "2xl": "1400px",
       },
     },
   },

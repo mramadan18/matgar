@@ -55,7 +55,7 @@ const page = () => {
   }, []);
 
   return (
-    <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[100vh] text-rightmd:mt-0 overflow-hidden">
+    <div className="container flex flex-col-reverse md:flex-row justify-between min-h-[100vh] text-rightmd:mt-0 overflow-hidden">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -109,7 +109,7 @@ const page = () => {
               <div className="relative">
                 <PhoneInput
                   className="p-0"
-                  defaultCountry="sa"
+                  defaultCountry="lb"
                   inputClassName="!border !border-[#707070] !text-black !px-4 !rounded-[4px] !rounded-r-none !rounded-b-none"
                   inputProps={{
                     placeholder: "أدخل رقم الجوال",
@@ -171,7 +171,10 @@ const page = () => {
               <a href="#">نسيت كلمة المرور ؟</a>
             </div>
             <div className="anime-item">
-              <button type="submit" className="w-full bg-primary text-lg py-2">
+              <button
+                type="submit"
+                className="w-full bg-primary text-lg py-3 font-bold"
+              >
                 تسجيل
               </button>
             </div>

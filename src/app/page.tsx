@@ -1,12 +1,15 @@
 import Statistics from "@/components/HomePage/Statistics";
 import imgHero from "/public/img for salla/homePage/Group 85.png";
-
 import Sectors from "@/components/HomePage/Sectors";
-import Featuers from "@/components/HomePage/Featuers";
+import Featuer1 from "@/components/HomePage/Featuers/Featuer1";
 import HeroSection from "@/components/utils/HeroSection";
 import CreateMatgerCardMainPage from "@/components/utils/CreateMatgerCardMainPage";
 import Layout from "@/components/Layout";
 import Documentation from "@/components/HomePage/Documentation";
+import Featuer2 from "@/components/HomePage/Featuers/Featuer2";
+import Featuer3 from "@/components/HomePage/Featuers/Featuer3";
+import Featuer4 from "@/components/HomePage/Featuers/Featuer4";
+import Featuer5 from "@/components/HomePage/Featuers/Featuer5";
 
 export default function Home() {
   return (
@@ -18,7 +21,11 @@ export default function Home() {
       />
       <Statistics />
       <Sectors />
-      <Featuers />
+      <Featuer1 />
+      <Featuer2 />
+      <Featuer3 />
+      <Featuer4 />
+      <Featuer5 />
       <Documentation />
       <CreateMatgerCardMainPage
         head={"انضم لنا وامتلك متجرك الاحترافي"}

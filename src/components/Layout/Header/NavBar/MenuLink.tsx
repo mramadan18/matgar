@@ -3,7 +3,7 @@ import { usePathname } from "next/navigation";
 
 export interface MenuLinkProps {
   linkName: string;
-  linkPath: string;
+  linkPath?: string;
   children: JSX.Element | JSX.Element[];
 }
 
@@ -12,13 +12,12 @@ const MenuLink = (props: MenuLinkProps) => {
 
   return (
     <li className="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-524">
-      <Link
+      <a
         className="font-bold gap-3 px-2 py-4 whitespace-nowrap"
-        href={props.linkPath}
         style={pathname === "/special" ? { color: "#fff" } : { color: "#000" }}
       >
         {props.linkName}
-      </Link>
+      </a>
       <ul className="sub-menu">{props.children}</ul>
     </li>
   );

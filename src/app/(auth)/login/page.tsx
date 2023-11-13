@@ -52,7 +52,7 @@ const page = () => {
   }, []);
 
   return (
-    <div className="content-container flex flex-col-reverse md:flex-row justify-between min-h-[90vh] text-right overflow-hidden">
+    <div className="container flex flex-col-reverse md:flex-row justify-between min-h-[90vh] text-right overflow-hidden">
       <motion.div
         initial="hidden"
         animate="visible"
@@ -68,7 +68,7 @@ const page = () => {
           style={{ transform: "translateY(0px)", opacity: 1 }}
         >
           <div className="w-[50%]">
-            <Link href={"/signup"}>
+            <Link href={"/register"}>
               <h3 className="tabs__label second">إنشاء حساب</h3>
             </Link>
           </div>
@@ -138,7 +138,7 @@ const page = () => {
               style={{ transform: "translateY(0px)", opacity: 1 }}
             >
               <div className="remember">
-                <div className="rec-checkbox flex flex-row-reverse items-center gap-2">
+                <div className="rec-checkbox flex items-center gap-2">
                   <input
                     type="checkbox"
                     id="remember"
@@ -155,7 +155,10 @@ const page = () => {
               className="anime-item"
               style={{ transform: "translateY(0px)", opacity: 1 }}
             >
-              <button type="submit" className="w-full bg-primary py-2 text-lg">
+              <button
+                type="submit"
+                className="w-full py-3 bg-primary text-lg font-bold"
+              >
                 تسجيل الدخول
               </button>
             </div>

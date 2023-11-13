@@ -6,19 +6,16 @@ import NavBar from "./NavBar";
 import NavbarMobile from "./NavBar/NavbarMobile";
 
 const Header = () => {
-  const [showMenu, setShowMenu] = useState(false);
   const pathname = usePathname();
+  const [showMenu, setShowMenu] = useState(false);
 
   return (
     <header
-      className="w-full relative"
-      style={
-        pathname === "/special"
-          ? { backgroundColor: "#1D2F32" }
-          : { backgroundColor: "#ffffff" }
-      }
+      className={`sticky top-0 left-0 z-50 py-4 w-full shadow-sm ${
+        pathname === "/special" ? "bg-[#1D2F32]" : "bg-white"
+      }`}
     >
-      <div className="content-container flex justify-between items-center mx-auto px-10 pt-10">
+      <div className="container flex justify-between items-center">
         <Logo />
         <NavBar />
 

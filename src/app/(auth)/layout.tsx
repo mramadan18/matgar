@@ -19,7 +19,7 @@ export default function AuthLayout({
     <html lang="ar" dir="rtl">
       <body className={inter.className}>
         <Toaster position="top-center" reverseOrder={false} />
-        <div className="content-container flex justify-between items-center mx-auto px-10 py-10">
+        <div className="container flex justify-between items-center mx-auto px-10 py-10">
           <Logo />
         </div>
         <div className="flex flex-col items-start justify-start min-w-full min-h-full pt-10 pb-4 m-auto">

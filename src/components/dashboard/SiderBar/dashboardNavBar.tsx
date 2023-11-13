@@ -36,7 +36,7 @@ const DashboardNavBar = ({
   }, []);
   return (
     <div className="navbar-container pt-6">
-      <div className="flex justify-between gap-4 mb-10">
+      <div className="flex justify-between items-center gap-4 mb-10">
         <AiOutlineMenu
           className="text-[24px] block lg:hidden"
           onClick={() => setShowSidebar(true)}
@@ -54,21 +54,21 @@ const DashboardNavBar = ({
           </select>
         </div>
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center gap-2">
           <Image
             src={searchImg}
             alt={"search-Image"}
-            width={30}
-            className="ml-4 lg:hidden"
+            width={24}
+            className="lg:hidden"
           />
-          <Image src={giftImg} alt={"gift-Image"} width={30} />
-          <Image src={DartImage} alt={"moon-image"} width={30} />
-          <div className="flex justify-center items-center gap-1 relative">
-            <Image src={defualtUser} alt={"profile"} width={30} />
+          <Image src={giftImg} alt={"gift-Image"} width={24} />
+          <Image src={DartImage} alt={"moon-image"} width={24} />
+          <div className="flex justify-center items-center gap-2 relative">
+            <Image src={defualtUser} alt={"profile"} width={24} />
             <button
               onClick={() => setShowDropdown(!showDropdown)}
               id="dropdownDefaultButton"
-              className="text-black font-bold text-lg text-center flex items-center"
+              className="text-black font-bold text-lg text-center flex items-center p-0"
               type="button"
             >
               {user?.name}{" "}

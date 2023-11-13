@@ -1,32 +1,56 @@
+"use client";
 import Image from "next/image";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import store from "/public/img for salla/homePage/icons8-store-50.png";
 import user from "/public/img for salla/homePage/icons8-users-48.png";
 import Coffe from "/public/img for salla/homePage/icons8-coffee-mug-24.png";
 import laptop from "/public/img for salla/homePage/icons8-laptop-50.png";
 import book from "/public/img for salla/homePage/icons8-book-50.png";
 import service from "/public/img for salla/homePage/icons8-services-50.png";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const Sectors = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+  const mainControls = useAnimation();
+  const itemControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+      itemControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
-    <div
-      id="sectors"
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={mainControls}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      transition={{ duration: 1 }}
       className="anime-block home-block store-categories bg-grayer-100 dark:bg-darker-250 px-8"
     >
-      <div className="content-container">
+      <div className="container">
         <div className="title title--hero w-full center mb-8 sm:mb-12">
-          <p
-            className="anime-item opacity-0"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
-          >
+          <p className="font-bold">
             مهما كان مجال تجارتك يمكنك الاعتماد على متجر ودعمها لمختلف القطاعات
           </p>
         </div>
         <div className="grid grid-cols-3box gap-8 max1023:gap-4">
-          <a
-            href="#"
-            className="anime-item opacity-0 element card-entry card-entry--linked"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, x: 100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.5, delay: 0.1, ease: "linear" }}
+            className="element card-entry card-entry--linked relative"
           >
             <span className="card-entry__icon">
               <i className="sicon-store">
@@ -37,11 +61,17 @@ const Sectors = () => {
               <h2> متاجر التجزئة</h2>
               <p>مزايا عديدة تلائم تجارتك </p>
             </article>
-          </a>
-          <a
-            href="#"
-            className="anime-item opacity-0 element card-entry card-entry--linked"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, y: -100 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5, delay: 0.2, ease: "linear" }}
+            className="anime-item element card-entry card-entry--linked"
           >
             <span className="card-entry__icon">
               <i className="sicon-users">
@@ -52,11 +82,17 @@ const Sectors = () => {
               <h2> قطاع الجملة</h2>
               <p>نقلة نوعية في البيع للشركات والمؤسسات </p>
             </article>
-          </a>
-          <a
-            href="#"
-            className="anime-item opacity-0 element card-entry card-entry--linked"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.5, delay: 0.3, ease: "linear" }}
+            className="anime-item element card-entry card-entry--linked"
           >
             <span className="card-entry__icon">
               <i className="sicon-coffee-togo">
@@ -67,11 +103,17 @@ const Sectors = () => {
               <h2> المطاعم والمقاهي</h2>
               <p>جميع ما تحتاجه لإدارة أعمالك رقميًا </p>
             </article>
-          </a>
-          <a
-            href="#"
-            className="anime-item opacity-0 element card-entry card-entry--linked"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.5, delay: 0.4, ease: "linear" }}
+            className="anime-item element card-entry card-entry--linked"
           >
             <span className="card-entry__icon">
               <i className="sicon-content">
@@ -82,11 +124,17 @@ const Sectors = () => {
               <h2> صناعة المحتوى</h2>
               <p>المكان الأنسب لتحويل شغفك بصناعة المحتوى إلى أرباح </p>
             </article>
-          </a>
-          <a
-            href="#"
-            className="anime-item opacity-0 element card-entry card-entry--linked"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, y: 100 },
+              visible: { opacity: 1, y: 0 },
+            }}
+            transition={{ duration: 0.5, delay: 0.5, ease: "linear" }}
+            className="anime-item element card-entry card-entry--linked"
           >
             <span className="card-entry__icon">
               <i className="sicon-service-open">
@@ -97,11 +145,17 @@ const Sectors = () => {
               <h2> تقديم الخدمات</h2>
               <p>حلول مميزة لتقديم خدماتك وإدارة أعمالك </p>
             </article>
-          </a>
-          <a
-            href="#"
-            className="anime-item opacity-0 element card-entry card-entry--linked"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, x: 100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 0.5, delay: 0.5, ease: "linear" }}
+            className="anime-itemelement card-entry card-entry--linked"
           >
             <span className="card-entry__icon">
               <i className="sicon-laptop">
@@ -112,10 +166,10 @@ const Sectors = () => {
               <h2> المنتجات الرقمية</h2>
               <p>المكان الأنسب لبيع كافة المنتجات الرقمية </p>
             </article>
-          </a>
+          </motion.div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
