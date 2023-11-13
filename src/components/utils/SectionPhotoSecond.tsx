@@ -6,7 +6,7 @@ interface PropsValue {
   img: string | StaticImport;
   head: string;
   subHead: string;
-  ul: string[];
+  ul?: string[];
 }
 
 const SectionPhotoSecond = ({ img, head, subHead, ul }: PropsValue) => {
