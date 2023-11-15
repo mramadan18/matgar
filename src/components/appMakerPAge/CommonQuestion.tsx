@@ -1,7 +1,34 @@
+"use client";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 const CommonQuestion = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const mainControls = useAnimation();
+  const itemControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      mainControls.start("visible");
+      itemControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
-    <div id="faqs" className="mb-10 lg:mb-40">
-      <div className="content-container">
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={mainControls}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className="mb-10 lg:mb-40"
+    >
+      <div className="container">
         <div className="block-title text-center md:mb-10 py-16">
           <h2
             className="text-primary text-2xl sm:text-4xl font-bold anime-item opacity-0"
@@ -10,7 +37,17 @@ const CommonQuestion = () => {
             الأسئلة الشائعة
           </h2>
         </div>
-        <dl id="faqs-gridtab" className="gridtab gridtab--1 visible">
+        <motion.dl
+          ref={ref}
+          initial="hidden"
+          animate={itemControls}
+          variants={{
+            hidden: { opacity: 0, y: -100 },
+            visible: { opacity: 1, y: 0 },
+          }}
+          transition={{ duration: 1, delay: 1 }}
+          className="gridtab gridtab--1 visible"
+        >
           <dt
             className="relative group cursor-pointer overflow-hidden anime-item"
             style={{
@@ -91,9 +128,9 @@ const CommonQuestion = () => {
               ماهي مراحل إنشاء التطبيق؟
             </h2>
           </dt>
-        </dl>
+        </motion.dl>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

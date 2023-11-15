@@ -1,5 +1,5 @@
-import StartMakePhonePhoto from "../../../public/img for salla/AppMakerPage/mockuuups-iphone-12-mockup.png";
-import StartMakePhonePhoto2 from "/public/img for salla/AppMakerPage/mockuuups-iphone-12-mockup (2).png";
+import StartMakePhonePhoto from "#/img for salla/AppMakerPage/mockuuups-iphone-12-mockup.png";
+import StartMakePhonePhoto2 from "#/img for salla/AppMakerPage/mockuuups-iphone-12-mockup (2).png";
 import StartMakeYourAppSection from "@/components/appMakerPAge/StartMakeYourAppSection";
 import HeroSection from "@/components/appMakerPAge/HeroSection";
 import ShowCaseSection from "@/components/appMakerPAge/ShowCaseSection";

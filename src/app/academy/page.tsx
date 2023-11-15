@@ -1,17 +1,39 @@
-import React from "react";
+"use client";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import Header from "@/components/Layout/Header";
-
 import helpImg from "#/img for salla/helpCenter/Psychologist-bro.png";
 import searchImg from "#/img for salla/helpCenter/vuesax-broken-search-normal.png";
 import settingImg from "#/img for salla/helpCenter/vuesax-broken-setting-4.png";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const page = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const itemControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      itemControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
     <>
       <Header />
-      <div className="pt-4 text-center">
-        <div className="relative mx-auto">
+      <div className="container pt-4 text-center">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={itemControls}
+          variants={{
+            hidden: { opacity: 0, scale: 0 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="relative mx-auto"
+        >
           <Image
             className="mx-auto mt-32"
             src={helpImg}
@@ -46,9 +68,9 @@ const page = () => {
               height={18}
             />
           </div>
-        </div>
+        </motion.div>
 
-        <p className="mt-[300px] mb-4">جميع الحقوق محفوظة لدى متجر 2023 ©</p>
+        <p className="mt-[220px] mb-4">جميع الحقوق محفوظة لدى متجر 2023 ©</p>
       </div>
     </>
   );

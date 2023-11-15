@@ -23,7 +23,7 @@ const Statistics = () => {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.5 }}
-      className="my-[150px]"
+      className="my-[150px] overflow-hidden"
     >
       <div className="container">
         <div className="flex flex-col justify-center items-center">

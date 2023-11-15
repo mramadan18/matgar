@@ -32,7 +32,7 @@ const Sectors = () => {
         visible: { opacity: 1 },
       }}
       transition={{ duration: 1 }}
-      className="anime-block home-block store-categories bg-grayer-100 dark:bg-darker-250 px-8"
+      className="anime-block home-block store-categories bg-grayer-100 dark:bg-darker-250 px-8 overflow-hidden"
     >
       <div className="container">
         <div className="title title--hero w-full center mb-8 sm:mb-12">

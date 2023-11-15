@@ -1,12 +1,35 @@
-import React from "react";
-import photoCard from "../../../public/img for salla/SpecialEcommercePage/133___1-removebg-preview.png";
+"use client";
+import React, { useEffect, useRef } from "react";
+import photoCard from "#/img for salla/SpecialEcommercePage/133___1-removebg-preview.png";
 import Image from "next/image";
+import { motion, useAnimation, useInView } from "framer-motion";
 
 const ApplyNowCard = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const itemControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      itemControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
-    <div id="start-building-now" className="mb-40 visible mt-[120px]">
-      <div className="content-container m-auto">
-        <div className="text-white w-full flex flex-col items-center rounded-big p-12 lg:pr-48 relative bg-[#0279DE] rounded-2xl md:flex-row">
+    <div className="mb-40 visible mt-[120px]">
+      <div className="container">
+        <motion.div
+          ref={ref}
+          initial="hidden"
+          animate={itemControls}
+          variants={{
+            hidden: { opacity: 0, scale: 0 },
+            visible: { opacity: 1, scale: 1 },
+          }}
+          transition={{ duration: 1, delay: 0.5 }}
+          className="text-white w-full flex flex-col items-center rounded-big p-12 lg:pr-48 relative bg-[#0279DE] rounded-2xl md:flex-row"
+        >
           <div className="flex-grow text-right w-full">
             <h2
               className="text-5xl font-bold mb-5 leading-12 anime-item w-full"
@@ -58,7 +81,7 @@ const ApplyNowCard = () => {
               }}
             />
           </div>
-        </div>
+        </motion.div>
       </div>
     </div>
   );

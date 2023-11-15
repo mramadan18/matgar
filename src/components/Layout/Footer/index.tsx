@@ -1,10 +1,9 @@
 import Link from "next/link";
-import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer id="footer" className="footer" role="contentinfo">
-      <div className="content-container mx-auto px-10">
+      <div className="container mx-auto px-10">
         <div className="footer-links grid gap-12 sm:gap-8">
           <nav
             className="widget-area"

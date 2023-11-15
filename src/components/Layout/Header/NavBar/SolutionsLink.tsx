@@ -1,4 +1,3 @@
-import Link from "next/link";
 import bookPhoto from "../../../../../public/img for salla/homePage/icons8-book-50.png";
 import storePhoto from "../../../../../public/img for salla/homePage/icons8-store-50.png";
 import users from "../../../../../public/img for salla/homePage/icons8-users-48.png";

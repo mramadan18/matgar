@@ -22,7 +22,7 @@ const HeroSection = ({ head, subHead, img }: propsValues) => {
         visible: { opacity: 1, y: 0 },
       }}
       transition={{ duration: 0.5 }}
-      className="container p-0"
+      className="container overflow-hidden"
     >
       <div className="flex items-center flex-col justify-center">
         <div className="title title--hero w-full center mb-8">

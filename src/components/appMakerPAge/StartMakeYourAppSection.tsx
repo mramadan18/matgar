@@ -1,6 +1,9 @@
+"use client";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
-import StartMakePhonePhoto from "../../../public/img for salla/AppMakerPage/mockuuups-iphone-12-mockup.png";
 import { StaticImport } from "next/dist/shared/lib/get-img-props";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 interface propsValues {
   h2?: string;
   img: string | StaticImport;
@@ -10,9 +13,30 @@ interface propsValues {
   p: string;
 }
 const StartMakeYourAppSection = (props: propsValues) => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const itemControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      itemControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
-    <div id="start-building-now" className="mb-40 visible ">
-      <div className="container  m-auto">
+    <div className="mb-40 visible">
+      <motion.div
+        ref={ref}
+        initial="hidden"
+        animate={itemControls}
+        variants={{
+          hidden: { opacity: 0, scale: 0 },
+          visible: { opacity: 1, scale: 1 },
+        }}
+        transition={{ duration: 1, delay: 0.5 }}
+        className="container m-auto"
+      >
         <div className="block-title text-center mb-10 py-16  block">
           <h2
             className="text-primary text-4xl font-bold anime-item opacity-0"
@@ -93,7 +117,7 @@ const StartMakeYourAppSection = (props: propsValues) => {
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

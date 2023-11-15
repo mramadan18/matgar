@@ -9,7 +9,7 @@ import report from "../../../public/img for salla/SpecialEcommercePage/icons8-re
 const SpecialSection2 = () => {
   return (
     <div className="anime-block home-block px-8">
-      <div className="content-container">
+      <div className="container">
         <div className="title title--hero w-full center mb-8 sm:mb-12">
           <h2>خدمات متجر سبيشل </h2>
           <p>بعض الشركاء الذي نفتخر بالتعاون معهم بنجاحهم مع منصة متجر</p>
@@ -21,6 +21,8 @@ const SpecialSection2 = () => {
               "تتناسب هذه الميزة مع توسع أعمالك في أكثر من مدينة ومنطقة جغرافية بحيث يتم تحديد المخزون الموجود في كل مستودع ويتم الخصم من مخزونه الخاص عند إتمام عملية البيع"
             }
             img={store}
+            animateStart={{ opacity: 0, x: 50 }}
+            animateEnd={{ opacity: 1, x: 0 }}
           />
           <SpecailCard2
             head={"B2B البيع للشركات وبالجملة "}
@@ -28,6 +30,8 @@ const SpecialSection2 = () => {
               "يمكنك متجر سبيشل من البيع للعملاء الأفراد والشركات من خلال نموذج مخصص تتم الموافقة عليه من قبل مدير المتجر  كما تمكنك هذه الميزة من التحكم بأسعار المنتجات بشكل كامل   لتناسب عملاءك الأفراد أو الشركات"
             }
             img={moneyPhoto}
+            animateStart={{ opacity: 0, x: -50 }}
+            animateEnd={{ opacity: 1, x: 0 }}
           />
           <SpecailCard2
             head={"رسوم مرنة لبوابة الدفع"}
@@ -35,6 +39,8 @@ const SpecialSection2 = () => {
               "صمم متجر سبيشل بشكل أساسي للشركات التي لديها زخم عالي من الطلبات لتتوافق مع هذا العدد الكبير من خلال تقديم رسوم مرنة لبوابة الدفع"
             }
             img={percentagePhoto}
+            animateStart={{ opacity: 0, scale: 0 }}
+            animateEnd={{ opacity: 1, scale: 1 }}
           />
           <SpecailCard2
             head={"الربط التكاملى"}
@@ -42,6 +48,8 @@ const SpecialSection2 = () => {
               "متجر سبيشل ليست بداية جديدة، نحن نكمل معك الطريق ونساعدك على التوسع والانتشار، عن طريق إتاحة الربط مع مختلف البرامج والأدوات، بالإضافة إلى توفيرعدد لا محدود   من الموظفين والفروع ليتناسب مع نمو تجارتك"
             }
             img={infintePhoto}
+            animateStart={{ opacity: 0, scale: 0 }}
+            animateEnd={{ opacity: 1, scale: 1 }}
           />
           <SpecailCard2
             head={"نقل البيانات من المنصات الأخرى إلينا"}
@@ -49,6 +57,8 @@ const SpecialSection2 = () => {
               "يمكنك الاستعانة بفريق مختص من خبراء متجر سبيشل لنقل بيانات متجرك مثل المنتجات والعملاء وغيرها من البيانات من مختلف منصات التجارة الإلكترونية إلى منصة متج لتسهيل عملية الانتقال و إتمامها بشكل سريع وسلس"
             }
             img={directionPhoto}
+            animateStart={{ opacity: 0, x: 50 }}
+            animateEnd={{ opacity: 1, x: 0 }}
           />
           <SpecailCard2
             head={"تقارير تفصيلية شاملة"}
@@ -56,6 +66,8 @@ const SpecialSection2 = () => {
               "يمكنك متجر سبيشل من الاطلاع على جميع تفاصيل متجرك من خلال تقارير تفصيلية تمكنك من إدارة أعمالك بسهولة منها ما يلخص أداء المتجر، ومنها ما يفصل جميع العمليات ويوضح المنتجات أوالتصنيفات الأكثر مبيعاً"
             }
             img={report}
+            animateStart={{ opacity: 0, x: -50 }}
+            animateEnd={{ opacity: 1, x: 0 }}
           />
         </div>
       </div>

@@ -27,7 +27,7 @@ const Featuer1 = () => {
         visible: { opacity: 1 },
       }}
       transition={{ duration: 1 }}
-      className="anime-block home-block feature-block bg-white end my-[150px]"
+      className="anime-block home-block feature-block bg-white end my-[150px] overflow-hidden"
     >
       <div className="container">
         <div className="feature-block__wrapper">

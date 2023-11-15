@@ -1,17 +1,48 @@
+"use client";
+import React, { useEffect, useRef } from "react";
 import Image from "next/image";
 import heroImg from "#/img for salla/SpecialEcommercePage/133.png";
+import { motion, useAnimation, useInView } from "framer-motion";
+
 const HeroSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
+
+  const itemControls = useAnimation();
+
+  useEffect(() => {
+    if (isInView) {
+      itemControls.start("visible");
+    }
+  }, [isInView]);
+
   return (
     <div className="bg-[#1E2F32] mt-[-120px]">
-      <div className="content-container">
+      <div className="container">
         <div className="feature-block__wrapper flex justify-between w-full">
-          <div
-            className="anime-item opacity-0"
-            style={{ opacity: 1, transform: "translateY(0px)" }}
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, x: 100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 1, delay: 0.5 }}
           >
             <Image src={heroImg} alt="" />
-          </div>
-          <div className="flex items-center justify-end max992:justify-start flex-1">
+          </motion.div>
+          <motion.div
+            ref={ref}
+            initial="hidden"
+            animate={itemControls}
+            variants={{
+              hidden: { opacity: 0, x: -100 },
+              visible: { opacity: 1, x: 0 },
+            }}
+            transition={{ duration: 1, delay: 0.5 }}
+            className="flex items-center justify-end max992:justify-start flex-1"
+          >
             <article className="article article--features flex items-start flex-col text-center mx-auto lg:mx-0 lg:text-right">
               <div className="mb-8">
                 <div className="title title--hero mb-10">
@@ -29,7 +60,7 @@ const HeroSection = () => {
                 </div>
               </div>
             </article>{" "}
-          </div>
+          </motion.div>
         </div>
       </div>
     </div>

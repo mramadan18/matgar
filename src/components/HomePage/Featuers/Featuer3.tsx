@@ -15,8 +15,6 @@ const Featuer3 = () => {
       mainControls.start("visible");
       itemControls.start("visible");
     }
-
-    console.log(isInView);
   }, [isInView]);
 
   return (
@@ -30,7 +28,7 @@ const Featuer3 = () => {
           visible: { opacity: 1 },
         }}
         transition={{ duration: 1 }}
-        className="anime-block home-block feature-block bg-white dark:bg-darker-200 end my-[25px]"
+        className="anime-block home-block feature-block bg-white dark:bg-darker-200 end my-[25px] overflow-hidden"
       >
         <div className="container">
           <div className="feature-block__wrapper">
