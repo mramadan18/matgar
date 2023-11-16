@@ -1,9 +1,9 @@
 "use client";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
-import giftImg from "public/img for salla/dashboard/icons8-gift-50.png";
-import DartImage from "public/img for salla/dashboard/icons8-moon-50.png";
-import defualtUser from "public/img for salla/dashboard/vuesax-bulk-profile-circle.png";
+import giftImg from "#/img for salla/dashboard/icons8-gift-50.png";
+import DartImage from "#/img for salla/dashboard/icons8-moon-50.png";
+import defualtUser from "#/img for salla/dashboard/vuesax-bulk-profile-circle.png";
 import searchImg from "#/img for salla/dashboard/vuesax-broken-search-normal.png";
 import { AiOutlineMenu } from "react-icons/ai";
 import { useRouter } from "next/navigation";

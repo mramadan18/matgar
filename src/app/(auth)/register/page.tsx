@@ -168,7 +168,7 @@ const page = () => {
                   />
                 </div>
               </div>
-              <a href="#">نسيت كلمة المرور ؟</a>
+              <Link href="/">نسيت كلمة المرور ؟</Link>
             </div>
             <div className="anime-item">
               <button

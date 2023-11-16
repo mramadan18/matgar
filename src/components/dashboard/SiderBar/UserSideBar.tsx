@@ -1,63 +1,63 @@
 import Image from "next/image";
-import LogoImage from "/public/home/logo.png";
-import defaultIamge from "../../../../public/img for salla/dashboard/Group 85.png";
-import share from "../../../../public/img for salla/dashboard/icons8-sharing-30 (1).png";
-import homeImg from "../../../../public/img for salla/dashboard/vuesax-broken-home.png";
-import productImg from "../../../../public/img for salla/dashboard/vuesax-broken-box-add.png";
-import orderImg from "../../../../public/img for salla/dashboard/vuesax-broken-icon.png";
-import userImg from "../../../../public/img for salla/dashboard/vuesax-broken-people.png";
-import reports from "../../../../public/img for salla/dashboard/vuesax-broken-document.png";
-import subtitleImg from "../../../../public/img for salla/dashboard/vuesax-broken-subtitle.png";
-import settingImg from "../../../../public/img for salla/dashboard/vuesax-broken-setting-3.png";
-import promocodeImg from "../../../../public/img for salla/dashboard/vuesax-broken-percentage-circle.png";
-import coinsImg from "../../../../public/img for salla/dashboard/vuesax-broken-money-send.png";
-import offersImg from "../../../../public/img for salla/dashboard/vuesax-broken-card-slash.png";
-import martingImg from "../../../../public/img for salla/dashboard/vuesax-broken-send-2.png";
-import stockImg from "../../../../public/img for salla/dashboard/vuesax-broken-briefcase.png";
-import personImg from "../../../../public/img for salla/dashboard/vuesax-broken-frame.png";
-import bouquetStoreImg from "../../../../public/img for salla/dashboard/vuesax-broken-house.png";
-import settingsStoreImg from "../../../../public/img for salla/dashboard/setting-2.png";
-import walletImg from "../../../../public/img for salla/dashboard/vuesax-broken-bitcoin-card.png";
-import designImg from "../../../../public/img for salla/dashboard/vuesax-broken-translate.png";
-import makeImg from "../../../../public/img for salla/dashboard/vuesax-broken-link.png";
-import installImg from "../../../../public/img for salla/dashboard/vuesax-broken-autonio-(niox).png";
-import googleImg from "../../../../public/img for salla/dashboard/en_badge_web_generic-removebg-preview.png";
-import appleImg from "../../../../public/img for salla/dashboard/download-application-button-apple-app-store-free-vector-removebg-preview.png";
+import LogoImage from "#/home/logo.png";
+import defaultIamge from "#/img for salla/dashboard/Group 85.png";
+import share from "#/img for salla/dashboard/icons8-sharing-30 (1).png";
+import homeImg from "#/img for salla/dashboard/vuesax-broken-home.png";
+import productImg from "#/img for salla/dashboard/vuesax-broken-box-add.png";
+import orderImg from "#/img for salla/dashboard/vuesax-broken-icon.png";
+import userImg from "#/img for salla/dashboard/vuesax-broken-people.png";
+import reports from "#/img for salla/dashboard/vuesax-broken-document.png";
+import subtitleImg from "#/img for salla/dashboard/vuesax-broken-subtitle.png";
+import settingImg from "#/img for salla/dashboard/vuesax-broken-setting-3.png";
+import promocodeImg from "#/img for salla/dashboard/vuesax-broken-percentage-circle.png";
+import coinsImg from "#/img for salla/dashboard/vuesax-broken-money-send.png";
+import offersImg from "#/img for salla/dashboard/vuesax-broken-card-slash.png";
+import martingImg from "#/img for salla/dashboard/vuesax-broken-send-2.png";
+import stockImg from "#/img for salla/dashboard/vuesax-broken-briefcase.png";
+import personImg from "#/img for salla/dashboard/vuesax-broken-frame.png";
+import bouquetStoreImg from "#/img for salla/dashboard/vuesax-broken-house.png";
+import settingsStoreImg from "#/img for salla/dashboard/setting-2.png";
+import walletImg from "#/img for salla/dashboard/vuesax-broken-bitcoin-card.png";
+import designImg from "#/img for salla/dashboard/vuesax-broken-translate.png";
+import makeImg from "#/img for salla/dashboard/vuesax-broken-link.png";
+import installImg from "#/img for salla/dashboard/vuesax-broken-autonio-(niox).png";
+import googleImg from "#/img for salla/dashboard/googleplay.webp";
+import appleImg from "#/img for salla/dashboard/appstore.webp";
 import LinkNav from "./LinkNav";
 
 const UserSideBar = () => {
   return (
     <div className="sidebar-content pt-6 overflow-x-hidden">
       <div className="mb-6">
-        <Image src={LogoImage} alt={"logo-matger"} width={150} />
+        <Image src={LogoImage} alt={"logo-matger"} width={120} />
       </div>
-      <div className="Logo-User flex w-full p-5 items-start justify-start gap-3">
+      <div className="Logo-User flex w-full p-3 items-start justify-start gap-3">
         <div className="flex flex-col justify-center items-center">
           <Image
+            className="rounded-3xl border-solid border-2 border-second border-opacity-5 w-20 h-20 flex justify-center content-center"
             src={defaultIamge}
             alt={"logo-user"}
-            className=" rounded-3xl border-solid border-2 border-[#707070] border-opacity-5 w-[5rem]  h-[5rem] flex justify-center content-center"
           />
-          <div className="text-sm border-2 w-[2.5rem] text-center -translate-y-4 rounded-xl bg-[#0279DE] text-white">
+          <div className="text-sm border-2 w-[2.5rem] text-center -translate-y-4 rounded-xl bg-primary text-white">
             <p>بيسيك</p>
           </div>
         </div>
         <div className="flex flex-col items-start h-[5rem] justify-around">
-          <div className="text-2xl font-bold">
-            <h2>BMW</h2>
+          <div className="font-bold">
+            <h4>BMW</h4>
           </div>
-          <div className="flex border-[1px] rounded-2xl border-black border-opacity-20 w-full overflow-hidden">
-            <div className="px-2">
+          <div className="flex items-center border rounded-2xl border-black border-opacity-20 w-full overflow-hidden text-xs">
+            <div className="py-1 px-2">
               <p>زيارة المتجر</p>
             </div>
-            <div className="mr-2 py-1 px-2 bg-[#828282]">
-              <Image src={share} alt={"sahre-logo"} />
+            <div className="p-1 bg-[#828282]">
+              <Image src={share} alt={"sahre-logo"} width={14} height={14} />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="Nav">
+      <div className="Nav pb-6">
         <ul>
           <LinkNav url={"/dashboard/main"} img={homeImg} name="الرئيسية" />
           <LinkNav
@@ -143,9 +143,21 @@ const UserSideBar = () => {
             تطبيق التاجر
           </h4>
 
-          <div className="flex flex-wrap justify-center items-center mt-6">
-            <Image src={googleImg} alt="google" width={160} priority />
-            <Image src={appleImg} alt="apple" width={160} priority />
+          <div className="flex flex-wrap justify-center items-center gap-2 mt-6">
+            <Image
+              src={googleImg}
+              alt="google"
+              width={110}
+              height={40}
+              priority
+            />
+            <Image
+              src={appleImg}
+              alt="apple"
+              width={110}
+              height={40}
+              priority
+            />
           </div>
         </ul>
       </div>

@@ -30,11 +30,11 @@ export default function RootLayout({
             <UserSideBar />
           </div>
 
-          <div className="fixed top-0 right-0 h-full w-[360px] bg-[#F2F2F2] shadow-xl hidden lg:block">
+          <div className="fixed top-0 right-0 h-full w-[260px] bg-[#F2F2F2] shadow-xl hidden lg:block">
             <UserSideBar />
           </div>
 
-          <div className="pb-20 mr-auto px-8 w-full lg:w-[calc(100%-360px)]">
+          <div className="px-4 mr-auto w-full lg:w-[calc(100%-260px)]">
             <DashboardNavBar setShowSidebar={setShowSidebar}>
               {children}
             </DashboardNavBar>

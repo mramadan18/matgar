@@ -10,7 +10,9 @@ const Logo = () => {
   const pathname = usePathname();
 
   return (
-    <div className="w-48">
+    <div
+      className={`w-48 ${pathname === "/forget-password" ? "hidden" : "block"}`}
+    >
       <Link href="/">
         {pathname === "/special" ? (
           <Image

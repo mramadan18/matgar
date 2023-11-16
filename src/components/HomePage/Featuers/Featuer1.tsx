@@ -69,7 +69,7 @@ const Featuer1 = () => {
                       className="anime-text opacity-0"
                       style={{ opacity: 1, transform: "translateY(0px)" }}
                     >
-                      كما يمكنك صنع ثيمك الخاص مع Salla Twilight.
+                      كما يمكنك صنع ثيمك الخاص مع Matgar Twilight.
                     </li>
                   </ul>
                 </div>

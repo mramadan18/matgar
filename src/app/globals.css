@@ -1110,8 +1110,8 @@ input {
 
 .Nav li {
   padding: 0.3rem 1.5rem;
-  margin: 1.2rem 0;
-  font-size: 18px;
+  margin: 0.8rem 0;
+  font-size: 16px;
 }
 
 .Nav li:hover a,
