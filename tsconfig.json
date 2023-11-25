@@ -23,6 +23,6 @@
       "#/*": ["./public/*"]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/utils/Previews.tsx", "src/app/matjar-info/packages/page.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "src/components/utils/Previews.tsx", "src/app/matjar-info/packages/page.tsx", "src/app/(auth)/verification/page.jsx"],
   "exclude": ["node_modules"]
 }
