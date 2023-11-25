@@ -1,13 +1,15 @@
 "use client";
-import React, { useState } from "react";
-import OTPInput from "otp-input-react";
+import React, { useEffect, useState } from "react";
+import OtpInput from "react-otp-input";
 import { IoMdRefresh } from "react-icons/io";
 import SecondButton from "@/components/utils/SecondButton";
 import { motion } from "framer-motion";
 
 const page = () => {
-  const [OTP, setOTP] = useState("");
-
+  const [otp, setOtp] = useState("");
+  useEffect(() => {
+    console.log(otp);
+  }, [otp]);
   return (
     <div className="container mt-36 flex justify-center items-center">
       <motion.div
@@ -26,15 +28,25 @@ const page = () => {
         </p>
 
         <div className="flex justify-center items-center mt-6">
-          <OTPInput
-            value={OTP}
-            onChange={setOTP}
-            autoFocus
-            OTPLength={4}
-            otpType="number"
-            disabled={false}
-            className="flex-row-reverse"
-            inputClassName="!mr-3 !w-16 !h-16 !bg-[#F2F2F2] !border-none"
+          <OtpInput
+            value={otp}
+            onChange={setOtp}
+            numInputs={4}
+            containerStyle={{
+              display: "flex",
+              flexDirection: "row-reverse",
+              justifyContent: "center",
+              alignItems: "center",
+              gap: "1rem",
+            }}
+            inputStyle={{
+              width: "64px",
+              height: "64px",
+              backgroundColor: "#F2F2F2",
+              border: "none",
+              fontSize: "20px",
+            }}
+            renderInput={(props) => <input {...props} />}
           />
         </div>
 
