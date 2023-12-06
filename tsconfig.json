@@ -19,7 +19,7 @@
       }
     ],
     "paths": {
-      "@/*": ["./src/*"],
+      "@/*": ["./src/app/(merchant)/*", "./src/app/(admin)/*", "./src/*"],
       "#/*": ["./public/*"]
     }
   },
