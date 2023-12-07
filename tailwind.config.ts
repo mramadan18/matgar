@@ -20,8 +20,9 @@ const config: Config = {
     },
     extend: {
       colors: {
-        primary: "#0279DE",
+        primary: { DEFAULT: "#0279DE", 900: "#0279DEE5", 800: "#235AFF" },
         second: "#707070",
+        admin_bg: "#DEE3F2",
       },
       screens: {
         sm: "576px",
