@@ -52,8 +52,3 @@ const TableRow = ({
 };
 
 export default TableRow;
-/**
- * border-radius: 5px;
-background: var(--inputcolor, #F7F7F7);
-box-shadow: ;
- */
