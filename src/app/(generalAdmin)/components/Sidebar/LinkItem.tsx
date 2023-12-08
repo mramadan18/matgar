@@ -17,14 +17,16 @@ const LinkItem = ({ link, icon, title }: Props) => {
       <Link
         href={link}
         className={`flex justify-start items-center gap-6 text-xl py-4 pr-10 transition-all duration-500 hover:bg-primary-900 hover:text-white group ${
-          pathname === link ? "bg-primary-900 text-white" : "bg-white"
+          pathname.split("/").slice(0, 3).join("/") === link
+            ? "bg-primary-900 text-white"
+            : "bg-white"
         }`}
       >
         <Image
           src={icon}
           alt={title}
           className={`transition-all duration-500 group-hover:brightness-0 group-hover:saturate-100 group-hover:invert group-hover:sepia-0 group-hover:hue-rotate-[27deg] group-hover:contrast-[111%] ${
-            pathname === link
+            pathname.split("/").slice(0, 3).join("/") === link
               ? "brightness-0 saturate-100 invert sepia-0 hue-rotate-[27deg] contrast-[111%]"
               : ""
           }`}

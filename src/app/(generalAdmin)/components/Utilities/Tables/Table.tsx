@@ -12,7 +12,7 @@ type Props = {
 const Table = () => {
   const data: Props[] = [
     {
-      id: "#2345",
+      id: "2345",
       username: "اسم مستخدم",
       status: "مكتمل",
       total: "700",
@@ -20,7 +20,7 @@ const Table = () => {
       shipping_to: "مصر القاهرة",
     },
     {
-      id: "#2355",
+      id: "2355",
       username: "اسم مستخدم",
       status: "قيد التنفيذ",
       total: "800",
@@ -28,7 +28,7 @@ const Table = () => {
       shipping_to: "مصر المنصورة",
     },
     {
-      id: "#2345",
+      id: "2345",
       username: "اسم مستخدم",
       status: "ملغي",
       total: "300",
@@ -36,7 +36,7 @@ const Table = () => {
       shipping_to: "مصر  الجيزه",
     },
     {
-      id: "#2345",
+      id: "2345",
       username: "اسم مستخدم",
       status: "مكتمل",
       total: "100",

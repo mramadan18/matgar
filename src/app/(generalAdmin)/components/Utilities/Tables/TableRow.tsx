@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 type Props = {
   id: string;
   username: string;
@@ -18,7 +20,7 @@ const TableRow = ({
   return (
     <tr className="bg-white border-b">
       <td scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
-        {id}
+        #{id}
       </td>
       <td className="px-6 py-4 border-r border-[#CDD3E3]">{username}</td>
       <td className="px-2 py-4 border-r border-[#CDD3E3]">
@@ -38,9 +40,12 @@ const TableRow = ({
       <td className="px-1 py-4 border-r border-[#CDD3E3]">{date}</td>
       <td className="px-6 py-4 border-r border-[#CDD3E3]">{shipping_to}</td>
       <td className="px-2 py-4 border-r border-[#CDD3E3]">
-        <button className="bg-primary-900 text-white py-3 w-32 rounded-lg">
+        <Link
+          href={`/admin/orders/${id}`}
+          className="bg-primary-900 text-white py-3 w-32 rounded-lg cursor-pointer block"
+        >
           تفاصيل
-        </button>
+        </Link>
       </td>
     </tr>
   );
