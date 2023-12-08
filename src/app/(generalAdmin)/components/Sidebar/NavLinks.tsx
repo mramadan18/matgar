@@ -20,29 +20,25 @@ const NavLinks = () => {
     <nav className="h-[80vh] overflow-y-auto pb-10">
       <ul className="flex flex-col gap-4">
         <LinkItem link="/admin" icon={home_icon} title="الرئيسية" />
-        <LinkItem link="/admin" icon={orders_icon} title="الطلبات" />
-        <LinkItem link="/admin" icon={stores_icon} title="المتاجر" />
-        <LinkItem link="/admin" icon={reports_icon} title="التقارير" />
-        <LinkItem link="/admin" icon={quiz_icon} title="الاسئلة والتقيمات" />
-        <LinkItem link="/admin" icon={maker_icon} title="صانع التطبيقات" />
-        <LinkItem link="/admin" icon={clients_icon} title="العملاء" />
+        <LinkItem link="/admin/orders" icon={orders_icon} title="الطلبات" />
+        <LinkItem link="/" icon={stores_icon} title="المتاجر" />
+        <LinkItem link="/" icon={reports_icon} title="التقارير" />
+        <LinkItem link="/" icon={quiz_icon} title="الاسئلة والتقيمات" />
+        <LinkItem link="/" icon={maker_icon} title="صانع التطبيقات" />
+        <LinkItem link="/" icon={clients_icon} title="العملاء" />
         <h5 className="text-primary-800 pr-4 my-2">التسويق</h5>
-        <LinkItem link="/admin" icon={discount_icon} title="كوبونات التخفيض" />
-        <LinkItem
-          link="/admin"
-          icon={marketing_icon}
-          title="الحملات التسويقية"
-        />
+        <LinkItem link="/" icon={discount_icon} title="كوبونات التخفيض" />
+        <LinkItem link="/" icon={marketing_icon} title="الحملات التسويقية" />
         <h5 className="text-primary-800 pr-4 my-2">الاعدادات</h5>
-        <LinkItem link="/admin" icon={package_icon} title="المتاجر" />
-        <LinkItem link="/admin" icon={wallet_icon} title="التقارير" />
+        <LinkItem link="/" icon={package_icon} title="المتاجر" />
+        <LinkItem link="/" icon={wallet_icon} title="التقارير" />
         <h5 className="text-primary-800 pr-4 my-2">تطبيق التاجر</h5>
 
         <div className="flex flex-col items-center gap-2">
-          <Link href={"/admin"}>
+          <Link href={"/"}>
             <Image src={google_play_img} alt="app" />
           </Link>
-          <Link href={"/admin"}>
+          <Link href={"/"}>
             <Image src={app_store_img} alt="app" />
           </Link>
         </div>

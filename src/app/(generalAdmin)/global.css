@@ -21,6 +21,12 @@
   background-color: #0279DEE5;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+}
+
 body {
   font-family: 'Cairo', sans-serif;
 }
