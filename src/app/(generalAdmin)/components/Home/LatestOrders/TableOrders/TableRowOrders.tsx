@@ -28,8 +28,10 @@ const TableRowOrders = ({
           className={`${
             status === "مكتمل"
               ? "bg-[#009721] text-white"
-              : status === "قيد التنفيذ"
+              : status === "قيد التنفيذ" || status === "قيد الانتظار"
               ? "bg-[#FFAD33]"
+              : status === "فشل"
+              ? "bg-[#FF0000] text-white"
               : "bg-[#F7F7F7] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]"
           } py-3 w-32 rounded-lg`}
         >

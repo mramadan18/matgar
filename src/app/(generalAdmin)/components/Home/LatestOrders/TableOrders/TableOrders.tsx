@@ -22,7 +22,7 @@ const TableOrders = () => {
     {
       id: "2355",
       username: "اسم مستخدم",
-      status: "قيد التنفيذ",
+      status: "قيد الانتظار",
       total: "800",
       date: "منذ 9 ساعات مضت",
       shipping_to: "مصر المنصورة",
@@ -38,7 +38,7 @@ const TableOrders = () => {
     {
       id: "2345",
       username: "اسم مستخدم",
-      status: "مكتمل",
+      status: "فشل",
       total: "100",
       date: "25 نوفمبر، 2023",
       shipping_to: "مصر  القاهرة",
