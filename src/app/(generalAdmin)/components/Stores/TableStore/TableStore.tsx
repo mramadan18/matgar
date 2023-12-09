@@ -45,7 +45,7 @@ const TableStore = () => {
 
   return (
     <div className="relative overflow-x-auto">
-      <table className="w-full text-lg text-center">
+      <table className="w-[1208px] text-lg text-center">
         <thead className="text-lg text-white uppercase bg-primary-900">
           <tr>
             <td scope="col" className="px-6 py-6 border-r border-[#CDD3E3]">
@@ -73,7 +73,7 @@ const TableStore = () => {
         </thead>
         <tbody>
           {data?.map((item) => (
-            <TableRowStore {...item} />
+            <TableRowStore key={item.id} {...item} />
           ))}
         </tbody>
       </table>

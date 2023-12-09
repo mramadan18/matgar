@@ -4,7 +4,7 @@ import demo_img from "#/admin_images/icons/demo_img.svg";
 const TableOrderDetails = () => {
   return (
     <div className="relative overflow-x-auto border border-primary-900 pt-2">
-      <table className="w-full text-lg text-center">
+      <table className="w-[1206px] text-lg text-center">
         <thead className="text-lg text-white uppercase bg-primary-900">
           <tr>
             <td scope="col" className="px-6 py-6 border-r">

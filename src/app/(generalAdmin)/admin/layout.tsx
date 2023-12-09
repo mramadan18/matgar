@@ -8,7 +8,7 @@ type Props = {
 
 const layout = ({ children }: Props) => {
   return (
-    <html lang="ar" dir="rtl">
+    <html lang="ar" dir="rtl" suppressHydrationWarning={true}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
@@ -17,7 +17,7 @@ const layout = ({ children }: Props) => {
           rel="stylesheet"
         />
       </head>
-      <body className="overflow-hidden">
+      <body className="overflow-hidden" suppressHydrationWarning={true}>
         <div className="lg:grid lg:grid-cols-[288px_1fr]">
           <Sidebar />
           <div>

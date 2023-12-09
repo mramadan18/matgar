@@ -28,7 +28,7 @@ const TableOrders = () => {
       shipping_to: "مصر المنصورة",
     },
     {
-      id: "2345",
+      id: "2365",
       username: "اسم مستخدم",
       status: "ملغي",
       total: "300",
@@ -36,7 +36,7 @@ const TableOrders = () => {
       shipping_to: "مصر  الجيزه",
     },
     {
-      id: "2345",
+      id: "2375",
       username: "اسم مستخدم",
       status: "فشل",
       total: "100",
@@ -47,7 +47,7 @@ const TableOrders = () => {
 
   return (
     <div className="relative overflow-x-auto">
-      <table className="w-full text-lg text-center">
+      <table className="w-[1208px] text-lg text-center">
         <thead className="text-lg text-white uppercase bg-primary-900">
           <tr>
             <td scope="col" className="px-6 py-6 border-r">
@@ -75,7 +75,7 @@ const TableOrders = () => {
         </thead>
         <tbody>
           {data?.map((item) => (
-            <TableRowOrders {...item} />
+            <TableRowOrders key={item.id} {...item} />
           ))}
         </tbody>
       </table>
