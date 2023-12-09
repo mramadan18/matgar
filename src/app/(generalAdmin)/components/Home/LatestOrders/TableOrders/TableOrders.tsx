@@ -1,4 +1,4 @@
-import TableRow from "./TableRow";
+import TableRowOrders from "./TableRowOrders";
 
 type Props = {
   id: string;
@@ -9,7 +9,7 @@ type Props = {
   shipping_to: string;
 };
 
-const Table = () => {
+const TableOrders = () => {
   const data: Props[] = [
     {
       id: "2345",
@@ -75,7 +75,7 @@ const Table = () => {
         </thead>
         <tbody>
           {data?.map((item) => (
-            <TableRow {...item} />
+            <TableRowOrders {...item} />
           ))}
         </tbody>
       </table>
@@ -83,4 +83,4 @@ const Table = () => {
   );
 };
 
-export default Table;
+export default TableOrders;

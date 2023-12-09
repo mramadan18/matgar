@@ -36,10 +36,10 @@ const TableRowStore = ({ id, store_name, status, phone }: Props) => {
         </button>
       </td>
       <td className="px-6 py-4 border-r border-[#CDD3E3]">{phone}</td>
-      <td className="px-6 py-4 border-r border-[#CDD3E3]">
+      <td className="px-2 py-4 border-r border-[#CDD3E3]">
         <Link
           href={`/admin/orders/${id}`}
-          className="bg-primary-900 text-white py-3 w-32 rounded-lg cursor-pointer block"
+          className="bg-primary-900 text-white py-3 w-32 rounded-lg cursor-pointer block mx-auto"
         >
           متابعه
         </Link>
@@ -47,7 +47,7 @@ const TableRowStore = ({ id, store_name, status, phone }: Props) => {
       <td className="px-2 py-4 border-r border-[#CDD3E3]">
         <Link
           href={`/admin/orders/${id}`}
-          className="bg-primary-900 text-white py-3 w-32 rounded-lg cursor-pointer block"
+          className="bg-primary-900 text-white py-3 w-32 rounded-lg cursor-pointer block mx-auto"
         >
           مشاهده
         </Link>

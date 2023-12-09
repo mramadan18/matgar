@@ -1,8 +1,9 @@
+import TableOrders from "../../components/Home/LatestOrders/TableOrders/TableOrders";
 import Breadcrumb from "../../components/Utilities/Breadcrumb/Breadcrumb";
 import BreadcrumbItem from "../../components/Utilities/Breadcrumb/BreadcrumbItem";
 import Filter from "../../components/Utilities/Filter/Filter";
+import Pagination from "../../components/Utilities/Pagination/Pagination";
 import SearchInput from "../../components/Utilities/SearchInput/SearchInput";
-import TableWithPagination from "../../components/Utilities/Tables/TableWithPagination";
 
 const page = () => {
   return (
@@ -20,7 +21,10 @@ const page = () => {
       </div>
 
       <div className="mt-56">
-        <TableWithPagination />
+        <TableOrders />
+        <div className="mt-10">
+          <Pagination />
+        </div>
       </div>
     </div>
   );

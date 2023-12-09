@@ -9,7 +9,7 @@ type Props = {
   shipping_to: string;
 };
 
-const TableRow = ({
+const TableRowOrders = ({
   id,
   username,
   status,
@@ -51,4 +51,4 @@ const TableRow = ({
   );
 };
 
-export default TableRow;
+export default TableRowOrders;
