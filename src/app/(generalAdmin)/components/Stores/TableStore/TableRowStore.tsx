@@ -46,7 +46,7 @@ const TableRowStore = ({ id, store_name, status, phone }: Props) => {
       </td>
       <td className="px-2 py-4 border-r border-[#CDD3E3]">
         <Link
-          href={`/admin/orders/${id}`}
+          href={`/admin/stores/view-details/${id}`}
           className="bg-primary-900 text-white py-3 w-32 rounded-lg cursor-pointer block mx-auto"
         >
           مشاهده
