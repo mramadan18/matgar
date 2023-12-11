@@ -34,7 +34,7 @@ const StoreDetails = () => {
           تفاصيل
         </Link>
         <Link
-          href={`/admin/stores/view-details/1`}
+          href={`/admin/stores/view-details/1/edit-details`}
           className="bg-black text-center text-white py-3 w-48 rounded-md cursor-pointer block"
         >
           تعديل
