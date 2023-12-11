@@ -22,7 +22,7 @@ const NavLinks = () => {
         <LinkItem link="/admin" icon={home_icon} title="الرئيسية" />
         <LinkItem link="/admin/orders" icon={orders_icon} title="الطلبات" />
         <LinkItem link="/admin/stores" icon={stores_icon} title="المتاجر" />
-        <LinkItem link="/" icon={reports_icon} title="التقارير" />
+        <LinkItem link="/admin/reports" icon={reports_icon} title="التقارير" />
         <LinkItem link="/" icon={quiz_icon} title="الاسئلة والتقيمات" />
         <LinkItem link="/" icon={maker_icon} title="صانع التطبيقات" />
         <LinkItem link="/" icon={clients_icon} title="العملاء" />
