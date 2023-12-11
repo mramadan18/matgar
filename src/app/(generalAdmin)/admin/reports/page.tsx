@@ -11,7 +11,7 @@ const page = () => {
     <div className="container mt-10">
       <Breadcrumb>
         <BreadcrumbItem link="/admin" title="الرئيسية" separator="/" />
-        <BreadcrumbItem link="/admin/orders" title="التقارير" />
+        <BreadcrumbItem link="/admin/reports" title="التقارير" />
       </Breadcrumb>
 
       <div className="mt-10">
