@@ -29,7 +29,7 @@ const NavLinks = () => {
           title="الاسئلة والتقيمات"
         />
         <LinkItem link="/" icon={maker_icon} title="صانع التطبيقات" />
-        <LinkItem link="/" icon={clients_icon} title="العملاء" />
+        <LinkItem link="/admin/customers" icon={clients_icon} title="العملاء" />
         <h5 className="text-primary-800 pr-4 my-2">التسويق</h5>
         <LinkItem link="/" icon={discount_icon} title="كوبونات التخفيض" />
         <LinkItem link="/" icon={marketing_icon} title="الحملات التسويقية" />
