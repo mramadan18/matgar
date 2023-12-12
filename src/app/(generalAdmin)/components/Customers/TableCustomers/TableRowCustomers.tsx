@@ -1,5 +1,6 @@
 import Image from "next/image";
 import demo_img from "#/admin_images/icons/demo_img.svg";
+import Link from "next/link";
 
 type Props = {
   id: string;
@@ -39,7 +40,7 @@ const TableRowCustomers = ({ id, name, email, phone }: Props) => {
               />
             </svg>
           </div>
-          <div className="cursor-pointer">
+          <Link href="/admin/customers/1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="34"
@@ -56,7 +57,7 @@ const TableRowCustomers = ({ id, name, email, phone }: Props) => {
                 fill="#231F20"
               />
             </svg>
-          </div>
+          </Link>
         </div>
       </td>
     </tr>
