@@ -28,7 +28,11 @@ const NavLinks = () => {
           icon={quiz_icon}
           title="الاسئلة والتقيمات"
         />
-        <LinkItem link="/" icon={maker_icon} title="صانع التطبيقات" />
+        <LinkItem
+          link="/admin/maker-app"
+          icon={maker_icon}
+          title="صانع التطبيقات"
+        />
         <LinkItem link="/admin/customers" icon={clients_icon} title="العملاء" />
         <h5 className="text-primary-800 pr-4 my-2">التسويق</h5>
         <LinkItem link="/" icon={discount_icon} title="كوبونات التخفيض" />
