@@ -35,7 +35,11 @@ const NavLinks = () => {
         />
         <LinkItem link="/admin/customers" icon={clients_icon} title="العملاء" />
         <h5 className="text-primary-800 pr-4 my-2">التسويق</h5>
-        <LinkItem link="/" icon={discount_icon} title="كوبونات التخفيض" />
+        <LinkItem
+          link="/admin/discount-coupons"
+          icon={discount_icon}
+          title="كوبونات التخفيض"
+        />
         <LinkItem link="/" icon={marketing_icon} title="الحملات التسويقية" />
         <h5 className="text-primary-800 pr-4 my-2">الاعدادات</h5>
         <LinkItem link="/" icon={package_icon} title="المتاجر" />
