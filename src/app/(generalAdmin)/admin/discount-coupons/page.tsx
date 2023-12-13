@@ -1,3 +1,4 @@
+import Link from "next/link";
 import TableCoupons from "../../components/DiscountCoupons/TableCoupons";
 
 const page = () => {
@@ -5,7 +6,10 @@ const page = () => {
     <div className="container mt-20 mb-10">
       <div className="flex justify-between items-center mb-4">
         <h4 className="font-medium">كوبونات الخصم</h4>
-        <button className="flex justify-center items-center gap-4 bg-primary-900 p-3 text-white">
+        <Link
+          href={"/admin/discount-coupons/add-coupon"}
+          className="flex justify-center items-center gap-4 bg-primary-900 p-3 text-white"
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="26"
@@ -22,7 +26,7 @@ const page = () => {
             />
           </svg>
           <span>اضافة كوبون خصم</span>
-        </button>
+        </Link>
       </div>
 
       <TableCoupons />
