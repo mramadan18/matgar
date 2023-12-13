@@ -40,9 +40,13 @@ const NavLinks = () => {
           icon={discount_icon}
           title="كوبونات التخفيض"
         />
-        <LinkItem link="/" icon={marketing_icon} title="الحملات التسويقية" />
+        <LinkItem
+          link="/admin/marketing-campaigns"
+          icon={marketing_icon}
+          title="الحملات التسويقية"
+        />
         <h5 className="text-primary-800 pr-4 my-2">الاعدادات</h5>
-        <LinkItem link="/" icon={package_icon} title="المتاجر" />
+        <LinkItem link="/" icon={package_icon} title="باقه المتجر" />
         <LinkItem link="/" icon={wallet_icon} title="التقارير" />
         <h5 className="text-primary-800 pr-4 my-2">تطبيق التاجر</h5>
 
