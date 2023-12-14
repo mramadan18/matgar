@@ -32,7 +32,7 @@ const page = () => {
   ];
 
   return (
-    <div className="mt-10">
+    <div className="my-10">
       <div className="container">
         <h4 className="font-medium">الحملات التسويقية</h4>
       </div>
