@@ -1,8 +1,7 @@
-import InfoBar from "../../components/Home/InfoBar/InfoBar";
-import TableMarketingCampaigns from "../../components/MarketingCampaigns/TableMarketingCampaigns";
 import LineChart from "../../components/Utilities/Charts/LineChart";
 import Filter from "../../components/Utilities/Filter/Filter";
 import SearchInput from "../../components/Utilities/SearchInput/SearchInput";
+import TableWallet from "../../components/WalletBills/TableWallet";
 
 const page = () => {
   const info = [
@@ -24,7 +23,7 @@ const page = () => {
     { x: 2, y: 550 },
     { x: 3, y: 236 },
     { x: 4, y: 0 },
-    { x: 5, y: 125 },
+    { x: 5, y: 175 },
     { x: 6, y: 760 },
     { x: 7, y: 475 },
     { x: 8, y: 880 },
@@ -35,9 +34,6 @@ const page = () => {
     <div className="my-10">
       <div className="container">
         <h4 className="font-medium">الحملات التسويقية</h4>
-      </div>
-      <div className="mt-10">
-        <InfoBar />
       </div>
       <div className="container mt-10">
         <LineChart
@@ -50,14 +46,14 @@ const page = () => {
         />
 
         <div className="mt-10">
-          <SearchInput placeholder="ابحث عن فاتورة" />
+          <SearchInput placeholder="ابحث عن مستخدم" />
         </div>
         <div className="mt-10">
           <Filter />
         </div>
 
         <div className="mt-56">
-          <TableMarketingCampaigns />
+          <TableWallet />
         </div>
       </div>
     </div>

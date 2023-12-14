@@ -47,7 +47,11 @@ const NavLinks = () => {
         />
         <h5 className="text-primary-800 pr-4 my-2">الاعدادات</h5>
         <LinkItem link="/" icon={package_icon} title="باقه المتجر" />
-        <LinkItem link="/" icon={wallet_icon} title="التقارير" />
+        <LinkItem
+          link="/admin/wallet-bills"
+          icon={wallet_icon}
+          title="المحظفة والفواتير"
+        />
         <h5 className="text-primary-800 pr-4 my-2">تطبيق التاجر</h5>
 
         <div className="flex flex-col items-center gap-2">

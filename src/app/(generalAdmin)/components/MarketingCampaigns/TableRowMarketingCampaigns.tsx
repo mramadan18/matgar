@@ -1,6 +1,3 @@
-import Image from "next/image";
-import demo_img from "#/admin_images/icons/demo_img.svg";
-
 type Props = {
   id: string;
   username: string;
@@ -20,7 +17,7 @@ const TableRowMarketingCampaigns = ({
 }: Props) => {
   return (
     <tr className="bg-white border-b">
-      <td scope="row" className="px-6 py-4 font-medium whitespace-nowrap">
+      <td scope="row" className="px-6 py-4">
         {id}
       </td>
       <td className="px-6 py-4 border-r border-[#CDD3E3]">{username}</td>
