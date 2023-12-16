@@ -1,7 +1,17 @@
 import Image from "next/image";
 import demo_img from "#/admin_images/icons/demo_img.svg";
+import SelectBox from "../../Utilities/SelectBox/SelectBox";
 
 const StoreEdit = () => {
+  const options = [
+    "قيد التنفيذ",
+    "بانتظار الدفع",
+    "قيد الانتظار",
+    "مكتمل",
+    "ملغي",
+    "فشل",
+  ];
+
   return (
     <div className="mt-10 pt-8 pb-32 px-10 bg-admin_bg">
       <div className="flex justify-between items-center">
@@ -57,7 +67,7 @@ const StoreEdit = () => {
           <input
             id="phone"
             type="text"
-            value={"0123456789"}
+            defaultValue={"0123456789"}
             className="p-4 w-full"
           />
         </div>
@@ -66,7 +76,7 @@ const StoreEdit = () => {
           <input
             id="phone"
             type="text"
-            value={"https://favebook.com"}
+            defaultValue={"https://favebook.com"}
             className="p-4 w-full"
           />
         </div>
@@ -75,7 +85,7 @@ const StoreEdit = () => {
           <input
             id="phone"
             type="text"
-            value={"https://favebook.com"}
+            defaultValue={"https://favebook.com"}
             className="p-4 w-full"
           />
         </div>
@@ -84,7 +94,7 @@ const StoreEdit = () => {
           <input
             id="phone"
             type="text"
-            value={"https://favebook.com"}
+            defaultValue={"https://favebook.com"}
             className="p-4 w-full"
           />
         </div>
@@ -93,19 +103,24 @@ const StoreEdit = () => {
           <input
             id="phone"
             type="text"
-            value={"https://favebook.com"}
+            defaultValue={"https://favebook.com"}
             className="p-4 w-full"
           />
         </div>
         <div className="pr-4 flex flex-col gap-4 w-full sm:w-96">
           <label htmlFor="phone">عدد الفروع </label>
-          <input id="phone" type="text" value={"2"} className="p-4 w-full" />
+          <input
+            id="phone"
+            type="text"
+            defaultValue={"2"}
+            className="p-4 w-full"
+          />
         </div>
 
         <div className="pr-4 w-full sm:w-96">
           <h6 className="font-medium my-4">الحاله :</h6>
 
-          <div className="py-3 px-6 bg-white border border-primary-900 flex justify-between items-center">
+          {/* <div className="py-3 px-6 bg-white border border-primary-900 flex justify-between items-center">
             <span className="text-[#868A9A]">قيد التنفيذ</span>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -142,7 +157,8 @@ const StoreEdit = () => {
                 فشل
               </li>
             </ul>
-          </div>
+          </div> */}
+          <SelectBox options={options} />
         </div>
 
         <button className="bg-primary-900 text-white py-3 w-full sm:w-96 mx-auto mt-20">

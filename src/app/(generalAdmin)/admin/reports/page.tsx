@@ -8,7 +8,7 @@ import BreadcrumbItem from "../../components/Utilities/Breadcrumb/BreadcrumbItem
 
 const page = () => {
   return (
-    <div className="container mt-10">
+    <div className="container my-10">
       <Breadcrumb>
         <BreadcrumbItem link="/admin" title="الرئيسية" separator="/" />
         <BreadcrumbItem link="/admin/reports" title="التقارير" />

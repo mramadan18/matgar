@@ -20,9 +20,9 @@ const page = () => {
             <path
               d="M1 13H13M13 13H25M13 13V1M13 13V25"
               stroke="white"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
             />
           </svg>
           <span>اضافة كوبون خصم</span>
