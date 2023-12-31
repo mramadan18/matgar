@@ -16,7 +16,7 @@ const LinkNav = (props: propsValuse) => {
   return (
     <li className={pathname === props.url ? "active" : ""}>
       <Link href={props.url}>
-        <Image src={props.img} alt={`${props.img}`} />
+        <Image src={props.img} alt={`${props.img}`} width={31} height={31} />
         <h1 className="text-base">{props.name}</h1>
       </Link>
     </li>
