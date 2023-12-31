@@ -12,7 +12,7 @@ const GoToDashboard = () => {
       role="alert"
     >
       <div className="flex justify-center items-center">
-        <h3 className="text-lg font-medium mb-4">مرحيا</h3>
+        <h3 className="text-lg font-medium mb-4">مرحبا</h3>
       </div>
       <div className="flex justify-center">
         <button
