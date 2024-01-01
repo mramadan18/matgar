@@ -8,7 +8,7 @@ import "swiper/css";
 const Slider = () => {
   return (
     <Swiper className="mySwiper">
-      <SwiperSlide className="bg-[url('https://c4.wallpaperflare.com/wallpaper/184/515/626/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg')] bg-cover bg-center bg-no-repeat bg-black">
+      <SwiperSlide className="!h-[600px] bg-[url('https://c4.wallpaperflare.com/wallpaper/184/515/626/digital-digital-art-artwork-illustration-drawing-hd-wallpaper-preview.jpg')] bg-cover bg-center bg-no-repeat bg-black">
         <div className="overlay w-full h-full bg-[rgba(0,0,0,0.30)]">
           <div className="container h-full relative flex items-center">
             <div className="flex justify-between text-white">
@@ -24,7 +24,7 @@ const Slider = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide className="bg-[url('https://free4kwallpapers.com/uploads/originals/2020/12/18/autumn-dreams-wallpaper.jpg')] bg-cover bg-center bg-no-repeat bg-black">
+      <SwiperSlide className="!h-[600px] bg-[url('https://free4kwallpapers.com/uploads/originals/2020/12/18/autumn-dreams-wallpaper.jpg')] bg-cover bg-center bg-no-repeat bg-black">
         <div className="overlay w-full h-full bg-[rgba(0,0,0,0.30)]">
           <div className="container h-full relative flex items-center">
             <div className="flex justify-between text-white">
@@ -40,7 +40,7 @@ const Slider = () => {
           </div>
         </div>
       </SwiperSlide>
-      <SwiperSlide className="bg-[url('https://images.hdqwalls.com/download/gathering-of-the-spirits-4k-r2-1366x768.jpg')] bg-cover bg-center bg-no-repeat bg-black">
+      <SwiperSlide className="!h-[600px] bg-[url('https://images.hdqwalls.com/download/gathering-of-the-spirits-4k-r2-1366x768.jpg')] bg-cover bg-center bg-no-repeat bg-black">
         <div className="overlay w-full h-full bg-[rgba(0,0,0,0.30)]">
           <div className="container h-full relative flex items-center">
             <div className="flex justify-between text-white">

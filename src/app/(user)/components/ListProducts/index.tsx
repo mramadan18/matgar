@@ -1,13 +1,4 @@
-"use client";
-// Import Swiper React components
-import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/free-mode";
-
-// import required modules
-import { FreeMode } from "swiper/modules";
+import React from "react";
 import ProductCard from "../ProductCard";
 
 type Props = {
@@ -106,36 +97,17 @@ const products: Props[] = [
   },
 ];
 
-const SliderProducts = () => {
+const ListProducts = () => {
   return (
     <div className="container mt-8">
-      <h2 className="text-center mb-8">احدث المنتجات</h2>
-      <Swiper
-        className="mySwiper"
-        slidesPerView={1.5}
-        spaceBetween={10}
-        breakpoints={{
-          450: {
-            slidesPerView: 2.5,
-          },
-          768: {
-            slidesPerView: 3.5,
-          },
-          1024: {
-            slidesPerView: 4.5,
-          },
-        }}
-        freeMode={true}
-        modules={[FreeMode]}
-      >
+      <h2 className="text-center mb-8">منتجاتنا</h2>
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
         {products?.map((product) => (
-          <SwiperSlide className="!h-[450px] ">
-            <ProductCard key={product.id} product={product} />
-          </SwiperSlide>
+          <ProductCard key={product.id} product={product} />
         ))}
-      </Swiper>
+      </div>
     </div>
   );
 };
 
-export default SliderProducts;
+export default ListProducts;

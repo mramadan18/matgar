@@ -8,7 +8,7 @@ const ProductCard = ({ product }: any) => {
         href="#"
       >
         <img
-          className="!object-contain"
+          className="!object-contain mx-auto"
           src={product.image}
           alt="product image"
         />

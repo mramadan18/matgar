@@ -41,10 +41,6 @@ img {
   height: 100%;
 }
 
-.swiper-slide {
-  height: 600px !important;
-}
-
 .swiper-slide img {
   display: block;
   width: 100%;
