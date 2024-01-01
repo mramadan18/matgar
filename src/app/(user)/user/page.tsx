@@ -1,5 +1,11 @@
+import Slider from "../components/Slider";
+
 const page = () => {
-  return <div>page</div>;
+  return (
+    <main>
+      <Slider />
+    </main>
+  );
 };
 
 export default page;

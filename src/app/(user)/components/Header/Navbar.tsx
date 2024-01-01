@@ -23,7 +23,9 @@ const Navbar = () => {
             <button onClick={handleOpenSidebar} className="2xl:hidden">
               <MdOutlineMenu className="text-4xl" />
             </button>
-            <Image src={logo} alt="logo" width={80} height={60} />
+            <Link href={"/user"}>
+              <Image src={logo} alt="logo" width={80} height={60} />
+            </Link>
             <nav className="mr-8 hidden 2xl:block">
               <ul className="flex items-center gap-4">
                 <li className="text-red-600 font-bold">
@@ -47,7 +49,7 @@ const Navbar = () => {
           <div className="flex items-center gap-4">
             <FaRegUserCircle className="text-3xl" />
             <IoBagOutline className="text-3xl" />
-            <h4>. ر.س</h4>
+            <h4>. ليرة</h4>
           </div>
         </div>
       </div>

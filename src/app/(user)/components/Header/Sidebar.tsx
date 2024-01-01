@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import { MouseEventHandler, useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 const Sidebar = () => {
@@ -9,6 +10,14 @@ const Sidebar = () => {
       ?.classList?.replace("right-0", "-right-full");
     document.querySelector(".overlay")?.classList?.replace("block", "hidden");
   };
+
+  useEffect(() => {
+    addEventListener("click", (e: any) => {
+      if (e?.target?.classList?.contains("overlay")) {
+        handleCloseSidebar();
+      }
+    });
+  }, []);
 
   return (
     <>

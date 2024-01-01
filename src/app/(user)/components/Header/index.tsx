@@ -3,7 +3,7 @@ import UpperTop from "./UpperTop";
 
 const Header = () => {
   return (
-    <header className="sticky top-0">
+    <header className="sticky top-0 z-40">
       <UpperTop />
       <Navbar />
     </header>
