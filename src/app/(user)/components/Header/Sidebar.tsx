@@ -1,6 +1,6 @@
 "use client";
 import Link from "next/link";
-import { MouseEventHandler, useEffect } from "react";
+import { useEffect } from "react";
 import { IoCloseOutline } from "react-icons/io5";
 
 const Sidebar = () => {

@@ -6,6 +6,7 @@ import { MdOutlineMenu } from "react-icons/md";
 import { FaRegUserCircle } from "react-icons/fa";
 import { IoBagOutline } from "react-icons/io5";
 import logo from "#/user_images/logo.jpg";
+import LoginForm from "../LoginForm";
 
 const Navbar = () => {
   const handleOpenSidebar = () => {
@@ -13,6 +14,17 @@ const Navbar = () => {
       .querySelector(".sidebar")
       ?.classList?.replace("-right-full", "right-0");
     document.querySelector(".overlay")?.classList?.replace("hidden", "block");
+  };
+
+  const handleOpenLoginModal = () => {
+    document
+      .querySelector(".login-modal")
+      ?.classList?.replace("hidden", "flex");
+    setTimeout(() => {
+      document
+        .querySelector(".login-modal")
+        ?.classList?.replace("opacity-0", "opacity-1");
+    }, 100);
   };
 
   return (
@@ -47,13 +59,18 @@ const Navbar = () => {
             </nav>
           </div>
           <div className="flex items-center gap-4">
-            <FaRegUserCircle className="text-3xl" />
-            <IoBagOutline className="text-3xl" />
+            <button onClick={handleOpenLoginModal}>
+              <FaRegUserCircle className="text-3xl" />
+            </button>
+            <Link href={"/user"}>
+              <IoBagOutline className="text-3xl" />
+            </Link>
             <h4>. ليرة</h4>
           </div>
         </div>
       </div>
       <Sidebar />
+      <LoginForm />
     </div>
   );
 };
